@@ -2,7 +2,7 @@
 
 :description: comprehensive documentation for the Java stack of devonfw.
 :doctype: book
-:toc: left
+:toc:
 :toc-title: Table of Contents
 :idprefix:
 :idseparator: -
@@ -13,7 +13,8 @@
 :chapter-label:
 :partnums:
 :imagesdir: ./
-:multipage-level: 0
+The devonfw community
+${project.version}, ${buildtime}
 
 
 http://www.devonfw.com/[_devonfw_] provides a solution to building applications which combine best-in-class frameworks and libraries as well as industry proven practices and code conventions.
@@ -25,7 +26,6 @@ However, the general coding patterns are based on common Java standards mainly f
 Therefore, the xref:general[general] section contains all the documentation that is universal to Java and does not differ between the two frameworks.
 Only the sections link:spring.asciidoc[spring] and link:quarkus.asciidoc[quarkus] contain documentation that is specific to the respective approach.
 
-
 If you're trying to decide which of the two frameworks to use, have a look at link:decision-between-Spring-and-Quarkus.asciidoc[this guide].
 
 You can also read the latest version of this documentation online at the following sources:
@@ -34,15 +34,10 @@ You can also read the latest version of this documentation online at the followi
 * https://devonfw.com/website/pages/docs/devon4j.asciidoc.html[devon4j on devonfw.com].
 * https://repository.sonatype.org/service/local/artifact/maven/redirect?r=central-proxy&g=com.devonfw.java.doc&a=devon4j-doc&v=LATEST&p=pdf[devon4j as PDF on maven-central]
 
-[[root-inline,root inline anchor]]This paragraph has a titled inline anchor
-with id `\[[root-inline]]`. It is linked from <<xrefs1>>.
-
-[multipage-level=1]
-[[General]]
 == General
-
 Here you will find documentation and code-patterns for developing with Java in general, independent of the framework you choose.
 
+include::architecture.asciidoc[leveloffset=+2]
 
 <<<<
 
@@ -308,25 +303,3 @@ include::Spring-native-vs-Quarkus.asciidoc[leveloffset=+3]
 include::quarkus/quarkus-template.asciidoc[leveloffset=+3]
 include::quarkus/guide-native-image.asciidoc[leveloffset=+3]
 include::quarkus/guide-beanmapping-quarkus.asciidoc[leveloffset=+3]
-
-
-[[Spring]]
-=== Spring
-
-This chapter is a leaf node and contains one section.
-
-include::guide-client-layer.asciidoc[leveloffset=+3]
-
-<<<<
-
-include::guide-service-layer.asciidoc[leveloffset=+3]
-
-include::guide-service-versioning.asciidoc[leveloffset=+3]
-
-<<<<
-
-include::guide-logic-layer.asciidoc[leveloffset=+3]
-
-include::guide-component-facade.asciidoc[leveloffset=+4]
-
-include::guide-usecase.asciidoc[leveloffset=+4]

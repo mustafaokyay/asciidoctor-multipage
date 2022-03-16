@@ -6,7 +6,7 @@ Author Name
 // The default multipage-level value is 1 (split into chapters)
 :multipage-level: 0
 
-This sample document attempts to to showcase and recreate the devonfw website using the MultipageHtml5Converter extension.
+This sample document attempts to to showcase and recreate the devonfw website using the MultipageHtml5Converter.
 
 [[root-inline,root inline anchor]]This paragraph has a titled inline anchor
 with id `\[[root-inline]]`. It is linked from <<xrefs2>>.
