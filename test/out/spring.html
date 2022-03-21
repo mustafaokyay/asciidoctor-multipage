@@ -5,7 +5,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.17">
-<title>Java</title>
+<meta name="author" content="Author Name">
+<title>MultipageHtml5Converter Sample</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -440,27 +441,62 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
              .nav-footer{text-align: center; margin-top: auto;}
              .nav-footer > p > a {white-space: nowrap;}</style>
 </head>
-<body id="spring" class="article">
+<body id="Spring" class="book toc2 toc-left">
 <div id="header">
-<h1>Java</h1>
+<h1>MultipageHtml5Converter Sample</h1>
+<div class="details">
+<span id="author" class="author">Author Name</span><br>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<p><span class="toc-root"><a href="sample.html">MultipageHtml5Converter Sample</a></span></p><ul class="sectlevel0">
+<li><a href="about-sample.html">About This Sample</a>
+</li>
+<li><a href="devon4j-documentation.html">Java</a>
+<ul class="sectlevel1">
+<li><a href="General.html">3. General</a>
+</li>
+<li><a href="Spring.html"><span class="toc-current">4. Spring</span></a>
+<ul class="sectlevel2">
+<li><a href="Spring.html#_spring">4.1. Spring</a>
+</li>
+<li><a href="Spring.html#_components">4.2. Components</a>
+</li>
+<li><a href="Spring.html#_classic_project_structure">4.3. Classic project structure</a>
+</li>
+<li><a href="Spring.html#_layers_2">4.4. Layers</a>
+</li>
+<li><a href="Spring.html#_guides">4.5. Guides</a>
+</li>
+</ul>
+</li>
+<li><a href="Quarkus.html">5. Quarkus</a>
+</li>
+</ul>
+</li>
+</ul>
+</div>
 </div>
 <div id="content">
 <div class="sect1">
-<h2 id="spring">2. Spring</h2>
+<h2 id="Spring">4. Spring</h2>
 <div class="sectionbody">
+<!-- toc disabled -->
+<div class="sect2">
+<h3 id="_spring">4.1. Spring</h3>
 <div class="paragraph">
 <p><a href="https://spring.io">Spring</a> is the most famous and established Java framework.
 It is fully supported by <a href="https://devonfw.com">devonfw</a> as an option and alternative to <a href="quarkus.asciidoc">quarkus</a>.</p>
 </div>
-<div class="sect2">
-<h3 id="guide-to-the-reader">2.1. Guide to the Reader</h3>
+<div class="sect3">
+<h4 id="_guide_to_the_reader">4.1.1. Guide to the Reader</h4>
 <div class="paragraph">
 <p>Dependent on the intention you are reading this document, you might be most interested in the following chapters:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>If you are not yet familiar with Spring, you may be interested in <a href="spring.html#pros">pros</a> and <a href="spring.html#cons">cons</a> of Spring. Also take a look at the <a href="https://spring.io/why-spring">official Spring website</a>.</p>
+<p>If you are not yet familiar with Spring, you may be interested in <a href="Spring.html#pros">pros</a> and <a href="Spring.html#cons">cons</a> of Spring. Also take a look at the <a href="https://spring.io/why-spring">official Spring website</a>.</p>
 </li>
 <li>
 <p>If you already have experience developing with Spring but are new to devon4j, take a look at devon4j&#8217;s recommendations on general best practices. Check out the chapters on <a href="architecture.asciidoc">architecture design</a>, <a href="guide-structure-classic.asciidoc">project structuring</a> and <a href="coding-conventions">coding conventions</a>. Follow the referenced links to go deeper into a topic.</p>
@@ -474,8 +510,8 @@ It is fully supported by <a href="https://devonfw.com">devonfw</a> as an option 
 </ul>
 </div>
 </div>
-<div class="sect2">
-<h3 id="pros">2.2. Pros</h3>
+<div class="sect3">
+<h4 id="pros">4.1.2. Pros</h4>
 <div class="paragraph">
 <p>Spring offers the following benefits:</p>
 </div>
@@ -499,8 +535,8 @@ Spring became famous for its non-invasive coding based on patterns instead of ha
 <p>See <a href="https://spring.io/why-spring">Why Spring?</a> for details.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="cons">2.3. Cons</h3>
+<div class="sect3">
+<h4 id="cons">4.1.3. Cons</h4>
 <div class="paragraph">
 <p>Spring has the following drawbacks:</p>
 </div>
@@ -512,28 +548,29 @@ Due to the pro of its long established history, spring also carries a lot of leg
 </li>
 <li>
 <p><strong>lost lead in cloud-native</strong><br>
-While for the last decades spring was leading innovation in Java app development, it seems that with the latest trends and shift such as cloud-native, they have been overtaken by frameworks like <a href="quarkus.asciidoc">quarkus</a>. However, spring is trying to catch up with <a href="spring.html#spring-native">spring-native</a>.</p>
+While for the last decades spring was leading innovation in Java app development, it seems that with the latest trends and shift such as cloud-native, they have been overtaken by frameworks like <a href="quarkus.asciidoc">quarkus</a>. However, spring is trying to catch up with <a href="#spring-native">spring-native</a>.</p>
 </li>
 </ul>
 </div>
 </div>
-<div class="sect2">
-<h3 id="spring-boot">2.4. Spring-Boot</h3>
+<div class="sect3">
+<h4 id="_spring_boot">4.1.4. Spring-Boot</h4>
 <div class="paragraph">
 <p><a href="https://spring.io/projects/spring-boot">Spring-boot</a> is a project and initiaitve within the spring-ecosystem that brought a lot of innovation and simplification into app development on top of spring.
 As of today we typically use the terms <em>spring</em> and <em>spring-boot</em> rather synonymously as we always use spring together with spring-boot.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="spring-native">2.5. Spring-Native</h3>
+<div class="sect3">
+<h4 id="_spring_native">4.1.5. Spring-Native</h4>
 <div class="paragraph">
 <p><a href="https://github.com/spring-projects-experimental/spring-native">Spring-native</a> adds cloud-native support to the spring ecosystem and allows to build a spring app as cloud-native image via <a href="https://www.graalvm.org/">GraalVM</a>.
 You may also consider <a href="quarkus.asciidoc">Quarkus</a> if you are interested in building cloud-native images. For a comparison of both Spring Native and Quarkus, you may refer to our <a href="Spring-native-vs-Quarkus.asciidoc">Spring Native vs. Quarkus</a> guide.</p>
 </div>
 <!-- toc disabled -->
 </div>
+</div>
 <div class="sect2">
-<h3 id="components">2.6. Components</h3>
+<h3 id="_components">4.2. Components</h3>
 <div class="paragraph">
 <p>Following <a href="architecture.asciidoc#architecture-principles">separation-of-concerns</a> we divide an application into components using our <a href="coding-conventions.asciidoc#packages">package-conventions</a> and <a href="guide-structure.asciidoc">project structure</a>.
 As described by the <a href="architecture.asciidoc">architecture</a> each component is divided into layers as described in the <a href="guide-structure.asciidoc">project structure</a>.
@@ -541,13 +578,13 @@ Please note that a component will only have the required layers.
 So a component may have any number from one to all layers.</p>
 </div>
 <div class="sect3">
-<h4 id="general-component">2.6.1. General Component</h4>
+<h4 id="_general_component">4.2.1. General Component</h4>
 <div class="paragraph">
 <p>Cross-cutting aspects belong to the implicit component <code>general</code>. It contains technical configurations and very general code that is not business specific. Such code shall not have any dependencies to other components and therefore business related code.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="business-component">2.6.2. Business Component</h4>
+<h4 id="_business_component">4.2.2. Business Component</h4>
 <div class="paragraph">
 <p>The <a href="architecture.asciidoc#business-architecture">business-architecture</a> defines the business components with their allowed dependencies. A small application (microservice) may just have one component and no dependencies making it simple while the same architecture can scale up to large and complex applications (from bigger microservice up to modulith).
 Tailoring an business domain into applications and applications into components is a tricky task that needs the skills of an experienced architect.
@@ -558,7 +595,7 @@ If your system grows and reaches <code>MAX+1</code> lines of code, it is not the
 </div>
 </div>
 <div class="sect3">
-<h4 id="app-component">2.6.3. App Component</h4>
+<h4 id="_app_component">4.2.3. App Component</h4>
 <div class="paragraph">
 <p>Only in case you need cross-cutting code that aggregates another component you may introduce the component <code>app</code>.
 It is allowed to depend on all other components but no other component may depend on it.
@@ -567,7 +604,7 @@ However, when you need to have a class that registers all services or component-
 </div>
 </div>
 <div class="sect3">
-<h4 id="component-example">2.6.4. Component Example</h4>
+<h4 id="_component_example">4.2.4. Component Example</h4>
 <div class="paragraph">
 <p>The following class diagram illustrates an example of the business component <code>Staffmanagement</code>:</p>
 </div>
@@ -583,14 +620,14 @@ However, when you need to have a class that registers all services or component-
 </div>
 </div>
 <div class="sect2">
-<h3 id="classic-project-structure">2.7. Classic project structure</h3>
+<h3 id="_classic_project_structure">4.3. Classic project structure</h3>
 <div class="paragraph">
 <p>In this section we describe the classic project structure as initially proposed for Java in devonfw.
 It is still valid and fully supported.
 However, if you want to start a new project, please consider using the <a href="guide-structure-modern.asciidoc">modern structure</a>.</p>
 </div>
 <div class="sect3">
-<h4 id="modules">2.7.1. Modules</h4>
+<h4 id="_modules">4.3.1. Modules</h4>
 <div class="paragraph">
 <p>The structure of a <code>devon4j</code> application is divided into the following modules:</p>
 </div>
@@ -612,7 +649,7 @@ However, if you want to start a new project, please consider using the <a href="
 </div>
 </div>
 <div class="sect3">
-<h4 id="deployment">2.7.2. Deployment</h4>
+<h4 id="_deployment">4.3.2. Deployment</h4>
 <div class="quoteblock">
 <blockquote>
 <div class="paragraph">
@@ -636,13 +673,13 @@ All you need to do in that case is to change the <code>packaging</code> in your 
 </div>
 </div>
 <div class="sect3">
-<h4 id="package-structure">2.7.3. Package Structure</h4>
+<h4 id="_package_structure">4.3.3. Package Structure</h4>
 <div class="paragraph">
 <p>The package structure of your code inside <code>src/main/java</code> (and <code>src/test/java</code>) of your modules is described in our coding conventions in the sections <a href="coding-conventions.asciidoc#packages">packages</a>. A full mapping of the architecture and the different code elements to the packaging is described in the following section.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="layers">2.7.4. Layers</h4>
+<h4 id="_layers">4.3.4. Layers</h4>
 <div class="paragraph">
 <p>The package structure of your code inside <code>src/main/java</code> (and <code>src/test/java</code>) of your app is described in our coding conventions in the sections <a href="coding-conventions.asciidoc#packages">packages</a>.
 The following table describes our classic approach for packaging and layering:</p>
@@ -688,7 +725,7 @@ The following table describes our classic approach for packaging and layering:</
 </table>
 </div>
 <div class="sect3">
-<h4 id="architecture-mapping">2.7.5. Architecture Mapping</h4>
+<h4 id="_architecture_mapping">4.3.5. Architecture Mapping</h4>
 <div class="paragraph">
 <p>In order to help you to map the architecture, packaging, layering, etc. to the code and see where different code elements should be placed,
 we provide this architecture mapping:</p>
@@ -781,10 +818,10 @@ we provide this architecture mapping:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="layers-2">2.8. Layers</h3>
+<h3 id="_layers_2">4.4. Layers</h3>
 <!-- toc disabled -->
 <div class="sect3">
-<h4 id="client-layer">2.8.1. Client Layer</h4>
+<h4 id="_client_layer">4.4.1. Client Layer</h4>
 <div class="paragraph">
 <p>There are various technical approaches to building GUI clients. The devonfw proposes rich clients that connect to the server via data-oriented services (e.g. using REST with JSON).
 In general, we have to distinguish among the following types of clients:</p>
@@ -806,7 +843,7 @@ In general, we have to distinguish among the following types of clients:</p>
 <p>Our main focus is on web-clients. In our sample application <a href="https://github.com/devonfw/my-thai-star/">my-thai-star</a> we offer a responsive web-client based on Angular following <a href="https://github.com/devonfw/devon4ng/">devon4ng</a> that integrates seamlessly with the back ends of my-thai-star available for Java using devon4j as well as .NET/C# using <a href="https://github.com/devonfw/devon4net/">devon4net</a>. For building angular clients read the separate <a href="https://github.com/devonfw/devon4ng/wiki">devon4ng guide</a>.</p>
 </div>
 <div class="sect4">
-<h5 id="javascript-for-java-developers">JavaScript for Java Developers</h5>
+<h5 id="_javascript_for_java_developers">JavaScript for Java Developers</h5>
 <div class="paragraph">
 <p>In order to get started with client development as a Java developer we give you some hints to get started. Also if you are an experienced JavaScript developer and want to learn Java this can be helpful. First, you need to understand that the JavaScript ecosystem is as large as the Java ecosystem and developing a modern web client requires a lot of knowledge. The following table helps you as experienced developer to get an overview of the tools, configuration-files, and other related aspects from the new world to learn. Also it helps you to map concepts between the ecosystems. Please note that we list the tools recommended by devonfw here (and we know that there are alternatives not listed here such as gradle, grunt, bower, etc.).</p>
 </div>
@@ -905,12 +942,12 @@ In general, we have to distinguish among the following types of clients:</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="service-layer">2.8.2. Service Layer</h4>
+<h4 id="_service_layer">4.4.2. Service Layer</h4>
 <div class="paragraph">
 <p>The service layer is responsible for exposing functionality made available by the <a href="guide-logic-layer.asciidoc">logical layer</a> to external consumers over a network via <a href="#protocol">technical protocols</a>.</p>
 </div>
 <div class="sect4">
-<h5 id="types-of-services">Types of Services</h5>
+<h5 id="_types_of_services">Types of Services</h5>
 <div class="paragraph">
 <p>Before you start creating your services you should consider some general design aspects:</p>
 </div>
@@ -948,7 +985,7 @@ In general, we have to distinguish among the following types of clients:</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="versioning">Versioning</h5>
+<h5 id="_versioning">Versioning</h5>
 <div class="paragraph">
 <p>For RPC services consumed by other applications we use versioning to prevent incompatibilities between applications when deploying updates. This is done by the following conventions:</p>
 </div>
@@ -973,13 +1010,13 @@ In general, we have to distinguish among the following types of clients:</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="interoperability">Interoperability</h5>
+<h5 id="_interoperability">Interoperability</h5>
 <div class="paragraph">
 <p>For services that are consumed by clients with different technology, <em>interoperability</em> is required. This is addressed by selecting the right protocol, following protocol-specific best practices and following our considerations especially <em>simplicity</em>.</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="service-considerations">Service Considerations</h5>
+<h5 id="_service_considerations">Service Considerations</h5>
 <div class="paragraph">
 <p>The term <em>service</em> is quite generic and therefore easily misunderstood. It is a unit exposing coherent functionality via a well-defined interface over a network. For the design of a service, we consider the following aspects:</p>
 </div>
@@ -1017,7 +1054,7 @@ Avoid polymorphism, RPC methods with unique name per signature and no overloadin
 </div>
 </div>
 <div class="sect4">
-<h5 id="security-7">Security</h5>
+<h5 id="_security_7">Security</h5>
 <div class="paragraph">
 <p>Your services are the major entry point to your application. Hence, security considerations are important here.</p>
 </div>
@@ -1028,12 +1065,12 @@ Avoid polymorphism, RPC methods with unique name per signature and no overloadin
 </div>
 </div>
 <div class="sect3">
-<h4 id="service-versioning">2.8.3. Service-Versioning</h4>
+<h4 id="_service_versioning">4.4.3. Service-Versioning</h4>
 <div class="paragraph">
 <p>This guide describes the aspect and details about versioning of <a href="guide-service-layer.asciidoc">services</a></p>
 </div>
 <div class="sect4">
-<h5 id="motivation-3">Motivation</h5>
+<h5 id="_motivation_3">Motivation</h5>
 <div class="paragraph">
 <p>Why versioning of services? First of all, you should only care about this topic if you really have to. Service versioning is complex and requires effort (time and budget). The best way to avoid this is to be smart in the first place when designing the service API.
 Further, if you are creating services where the only consumer is e.g. the web-client that you deploy together with the consumed services then you can change your service without the overhead to create new service versions and keeping old service versions for compatibility.</p>
@@ -1098,7 +1135,7 @@ Further, if you are creating services where the only consumer is e.g. the web-cl
 </div>
 </div>
 <div class="sect4">
-<h5 id="procedure">Procedure</h5>
+<h5 id="_procedure">Procedure</h5>
 <div class="paragraph">
 <p>The procedure when rolling out incompatible changes is illustrated by the following example:</p>
 </div>
@@ -1197,7 +1234,7 @@ Further, if you are creating services where the only consumer is e.g. the web-cl
 </div>
 </div>
 <div class="sect4">
-<h5 id="versioning-schema">Versioning Schema</h5>
+<h5 id="_versioning_schema">Versioning Schema</h5>
 <div class="paragraph">
 <p>In general anything can be used to differentiate versions of a service. Possibilities are:</p>
 </div>
@@ -1225,7 +1262,7 @@ Further, if you are creating services where the only consumer is e.g. the web-cl
 </div>
 </div>
 <div class="sect4">
-<h5 id="practice">Practice</h5>
+<h5 id="_practice">Practice</h5>
 <div class="paragraph">
 <p>So assuming you know that you have to do service versioning, the question is how to do it practically in the code.
 The approach for your devon4j project in case of code-first should be as described below:</p>
@@ -1268,7 +1305,7 @@ The approach for your devon4j project in case of code-first should be as describ
 </ul>
 </div>
 <div class="sect5">
-<h6 id="modularization">Modularization</h6>
+<h6 id="_modularization">Modularization</h6>
 <div class="paragraph">
 <p>For modularization, we also follow the KISS principle (see <a href="architecture.asciidoc#key-principles">key principles</a>):
 we suggest to have one <code>api</code> module per application that will contain the most recent version of your service and get released with every release-version of the application. The compatibility code with the versioned packages will be added to the <code>core</code> module and therefore is not exposed via the <code>api</code> module (because it has already been exposed in the previous release of the app). This way, you can always determine for sure which version of a service is used by another application just by its maven dependencies.</p>
@@ -1309,7 +1346,7 @@ we suggest to have one <code>api</code> module per application that will contain
 </div>
 </div>
 <div class="sect3">
-<h4 id="logic-layer">2.8.4. Logic Layer</h4>
+<h4 id="_logic_layer">4.4.4. Logic Layer</h4>
 <div class="paragraph">
 <p>The logic layer is the heart of the application and contains the main business logic.
 According to our <a href="architecture.asciidoc#business-architecture">business architecture</a>, we divide an application into <a href="guide-component.asciidoc">components</a>.
@@ -1317,7 +1354,7 @@ For each component, the logic layer defines different <a href="guide-usecase.asc
 It is very important that you follow the links to understand the concept of use-case in order to properly implement your business logic.</p>
 </div>
 <div class="sect4">
-<h5 id="responsibility">Responsibility</h5>
+<h5 id="_responsibility">Responsibility</h5>
 <div class="paragraph">
 <p>The logic layer is responsible to implement the business logic according to the specified functional demands and requirements.
 Therefore, it creates the actual value of the application. The logic layer is responsible for invoking business logic in external systems.
@@ -1338,12 +1375,12 @@ The following additional aspects are also included in its responsibility:</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="security-8">Security</h5>
+<h5 id="_security_8">Security</h5>
 <div class="paragraph">
 <p>The logic layer is the heart of the application. It is also responsible for authorization and hence security is important in this current case. Every method exposed in an interface needs to be annotated with an authorization check, stating what role(s) a caller must provide in order to be allowed to make the call. The authorization concept is described <a href="guide-access-control.asciidoc#authorization">here</a>.</p>
 </div>
 <div class="sect5">
-<h6 id="direct-object-references">Direct Object References</h6>
+<h6 id="_direct_object_references">Direct Object References</h6>
 <div class="paragraph">
 <p>A security threat are <a href="https://www.owasp.org/index.php/Top_10_2013-A4-Insecure_Direct_Object_References">Insecure Direct Object References</a>. This simply gives you two options:</p>
 </div>
@@ -1358,7 +1395,7 @@ The following additional aspects are also included in its responsibility:</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>Especially when using REST, direct object references via technical IDs are common sense. This implies that you have a proper <a href="spring.html#authorization">authorization</a> in place. This is especially tricky when your authorization does not only rely on the type of the data and according to static permissions but also on the data itself. Vulnerabilities for this threat can easily happen by design flaws and inadvertence. Here is an example from our sample application:</p>
+<p>Especially when using REST, direct object references via technical IDs are common sense. This implies that you have a proper <a href="#authorization">authorization</a> in place. This is especially tricky when your authorization does not only rely on the type of the data and according to static permissions but also on the data itself. Vulnerabilities for this threat can easily happen by design flaws and inadvertence. Here is an example from our sample application:</p>
 </div>
 <div class="paragraph">
 <p>We have a generic use-case to manage BLOBs. In the first place, it makes sense to write a generic REST service to load and save these BLOBs. However, the permission to read or even update such BLOB depends on the business object hosting the BLOB. Therefore, such a generic REST service would open the door for this OWASP A4 vulnerability. To solve this in a secure way, you need individual services for each hosting business object to manage the linked BLOB and have to check permissions based on the parent business object. In this example the ID of the BLOB would be the direct object reference and the ID of the business object (and a BLOB property indicator) would be the indirect object reference.</p>
@@ -1366,8 +1403,9 @@ The following additional aspects are also included in its responsibility:</p>
 <!-- toc disabled -->
 </div>
 </div>
-<div class="sect4">
-<h5 id="component-facade">Component Facade</h5>
+</div>
+<div class="sect3">
+<h4 id="_component_facade">4.4.5. Component Facade</h4>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -1383,10 +1421,10 @@ Our recommended approach for implementing the logic layer is <a href="guide-usec
 <div class="paragraph">
 <p>For each component of the application, the <a href="guide-logic-layer.asciidoc">logic layer</a> defines a component facade.
 This is an interface defining all business operations of the component.
-It carries the name of the component (<code>«Component»</code>) and has an implementation named <code>«Component»Impl</code> (see <a href="spring.html#implementation">implementation</a>).</p>
+It carries the name of the component (<code>«Component»</code>) and has an implementation named <code>«Component»Impl</code> (see <a href="#implementation">implementation</a>).</p>
 </div>
-<div class="sect5">
-<h6 id="api">API</h6>
+<div class="sect4">
+<h5 id="_api">API</h5>
 <div class="paragraph">
 <p>The component facade interface defines the logic API of the component and has to be business oriented.
 This means that all parameters and return types of all methods from this API have to be business <a href="guide-transferobject.asciidoc">transfer-objects</a>, <a href="guide-datatype.asciidoc">datatypes</a> (<code>String</code>, <code>Integer</code>, <code>MyCustomerNumber</code>, etc.), or collections of these.
@@ -1411,8 +1449,8 @@ The API may also only access objects of other business components listed in the 
 </div>
 </div>
 </div>
-<div class="sect5">
-<h6 id="implementation">Implementation</h6>
+<div class="sect4">
+<h5 id="_implementation">Implementation</h5>
 <div class="paragraph">
 <p>The implementation of an interface from the <a href="guide-logic-layer.asciidoc">logic layer</a> (a component facade or a <a href="guide-usecase.asciidoc">use-case</a>) carries the name of that interface with the suffix <code>Impl</code> and is annotated with <code>@Named</code>.
 An implementation typically needs access to the persistent data.
@@ -1446,8 +1484,8 @@ Further details about this can be found in <a href="guide-beanmapping.asciidoc">
 <!-- toc disabled -->
 </div>
 </div>
-<div class="sect4">
-<h5 id="usecase">UseCase</h5>
+<div class="sect3">
+<h4 id="_usecase">4.4.6. UseCase</h4>
 <div class="paragraph">
 <p>A use-case is a small unit of the <a href="guide-logic-layer.asciidoc">logic layer</a> responsible for an operation on a particular <a href="guide-jpa.asciidoc#entity">entity</a> (business object).
 We leave it up to you to decide whether you want to define an interface (API) for each use-case or provide an implementation directly.</p>
@@ -1459,8 +1497,8 @@ For <a href="https://en.wikipedia.org/wiki/Create,_read,_update_and_delete">CRUD
 <div class="paragraph">
 <p>In our example, we choose to define an interface for each use-case. We also use <code>*To</code> to refer to any type of transfer object. Please follow our <a href="guide-transferobject.asciidoc">guide</a> to understand more about different types of transfer object e.g. Eto, Dto, Cto</p>
 </div>
-<div class="sect5">
-<h6 id="find">Find</h6>
+<div class="sect4">
+<h5 id="_find">Find</h5>
 <div class="paragraph">
 <p>The <code>UcFind«BusinessObject»</code> defines all read operations to retrieve and search the <code>«BusinessObject»</code>.
 Here is an example:</p>
@@ -1474,8 +1512,8 @@ Here is an example:</p>
 </div>
 </div>
 </div>
-<div class="sect5">
-<h6 id="manage">Manage</h6>
+<div class="sect4">
+<h5 id="_manage">Manage</h5>
 <div class="paragraph">
 <p>The <code>UcManage«BusinessObject»</code> defines all CRUD write operations (create, update and delete) for the <code>«BusinessObject»</code>.
 Here is an example:</p>
@@ -1493,8 +1531,8 @@ Here is an example:</p>
 </div>
 </div>
 </div>
-<div class="sect5">
-<h6 id="custom">Custom</h6>
+<div class="sect4">
+<h5 id="_custom">Custom</h5>
 <div class="paragraph">
 <p>Any other non CRUD operation <code>Uc«Operation»«BusinessObject»</code> uses any other custom verb for <code>«Operation»</code>.
 Typically, such custom use-cases only define a single method.
@@ -1511,8 +1549,8 @@ Here is an example:</p>
 </div>
 </div>
 </div>
-<div class="sect5">
-<h6 id="implementation-2">Implementation</h6>
+<div class="sect4">
+<h5 id="_implementation_2">Implementation</h5>
 <div class="paragraph">
 <p>The implementation should carry its own name and the suffix <code>Impl</code> and is annotated with <code>@Named</code> and <code>@ApplicationScoped</code>. It will need access to the persistent data which is done by injecting the corresponding repository (or DAO). Furthermore, it shall not expose persistent entities from the data access layer and has to map them to transfer objects using the bean-mapper. Please refer to our <a href="guide-beanmapping.asciidoc">bean mapping</a>, <a href="guide-transferobject.asciidoc">transfer object</a> and <a href="guide-dependency-injection.asciidoc">dependency injection</a> documentation for more information.
 Here is an example:</p>
@@ -1556,8 +1594,8 @@ public class BookingmanagementRestServiceImpl implements BookingmanagementRestSe
 </div>
 </div>
 </div>
-<div class="sect5">
-<h6 id="internal-use-case">Internal use case</h6>
+<div class="sect4">
+<h5 id="_internal_use_case">Internal use case</h5>
 <div class="paragraph">
 <p>Sometimes, a component with multiple related entities and many use-cases needs to reuse business logic internally.
 Of course, this can be exposed as an official use-case API but this will imply using transfer-objects (ETOs) instead of entities. In some cases, this is undesired e.g. for better performance to prevent unnecessary mapping of entire collections of entities.
@@ -1569,9 +1607,8 @@ To avoid confusion with regular use-cases, we recommend to add the <code>Interna
 <!-- toc disabled -->
 </div>
 </div>
-</div>
 <div class="sect3">
-<h4 id="data-access-layer">2.8.5. Data-Access Layer</h4>
+<h4 id="_data_access_layer">4.4.7. Data-Access Layer</h4>
 <div class="paragraph">
 <p>The data-access layer is responsible for all outgoing connections to access and process data. This is mainly about accessing data from a persistent data-store. External system could also be accessed from the data-access layer if they match this definition, e.g. a mongo-db via rest services.</p>
 </div>
@@ -1579,7 +1616,7 @@ To avoid confusion with regular use-cases, we recommend to add the <code>Interna
 <p>Note: In the <a href="guide-structure-modern.asciidoc">modern project structure</a>, this layer is replaced by the <a href="guide-domain-layer.asciidoc">domain layer</a>.</p>
 </div>
 <div class="sect4">
-<h5 id="database">Database</h5>
+<h5 id="_database">Database</h5>
 <div class="paragraph">
 <p>You need to make your choice for a database. Options are documented <a href="https://github.com/devonfw/devonfw-guide/blob/master/general/db/guide-database.asciidoc">here</a>.</p>
 </div>
@@ -1591,7 +1628,7 @@ To avoid confusion with regular use-cases, we recommend to add the <code>Interna
 </div>
 </div>
 <div class="sect3">
-<h4 id="batch-layer">2.8.6. Batch Layer</h4>
+<h4 id="_batch_layer">4.4.8. Batch Layer</h4>
 <div class="paragraph">
 <p>We understand batch processing as a bulk-oriented, non-interactive, typically long running execution of tasks. For simplicity, we use the term "batch" or "batch job" for such tasks in the following documentation.</p>
 </div>
@@ -1608,7 +1645,7 @@ To avoid confusion with regular use-cases, we recommend to add the <code>Interna
 <p>In this chapter, we will describe the overall architecture (especially concerning layering) and how to administer batches.</p>
 </div>
 <div class="sect4">
-<h5 id="layering">Layering</h5>
+<h5 id="_layering">Layering</h5>
 <div class="paragraph">
 <p>Batches are implemented in the batch layer. The batch layer is responsible for batch processes, whereas the business logic is implemented in the logic layer. Compared to the <a href="guide-service-layer.asciidoc">service layer</a>, you may understand the batch layer just as a different way of accessing the business logic.
 From a component point of view, each batch is implemented as a subcomponent in the corresponding business component.
@@ -1637,7 +1674,7 @@ The batch calls the use case "create product" in the logic layer for actually cr
 </div>
 </div>
 <div class="sect5">
-<h6 id="directly-accessing-data-access-layer">Directly accessing data access layer</h6>
+<h6 id="_directly_accessing_data_access_layer">Directly accessing data access layer</h6>
 <div class="paragraph">
 <p>In practice, it is not always appropriate to create use cases for every bit of work a batch should do. Instead, the data access layer can be used directly.
 An example for that is a typical batch for data retention which deletes out-of-time data.
@@ -1648,7 +1685,7 @@ It is a typical design decision you have to make when designing your specific ba
 </div>
 </div>
 <div class="sect4">
-<h5 id="project-structure-and-packaging">Project structure and packaging</h5>
+<h5 id="_project_structure_and_packaging">Project structure and packaging</h5>
 <div class="paragraph">
 <p>Batches will be implemented in a separate Maven module to keep the application core free of batch dependencies. The batch module includes a dependency on the application core-module to allow the reuse of the use cases, DAOs etc.
 Additionally the batch module has dependencies on the required spring batch jars:</p>
@@ -1672,7 +1709,7 @@ Additionally the batch module has dependencies on the required spring batch jars
 </div>
 </div>
 <div class="paragraph">
-<p>To allow an easy <a href="spring.html#start-batch">start of the batches</a> from the command line it is advised to create a bootified jar for the batch module by adding the following to the <code>pom.xml</code> of the batch module:</p>
+<p>To allow an easy <a href="Spring.html#start-batch">start of the batches</a> from the command line it is advised to create a bootified jar for the batch module by adding the following to the <code>pom.xml</code> of the batch module:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1717,7 +1754,7 @@ Additionally the batch module has dependencies on the required spring batch jars
 </div>
 </div>
 <div class="sect4">
-<h5 id="implementation-3">Implementation</h5>
+<h5 id="_implementation_3">Implementation</h5>
 <div class="paragraph">
 <p>Most of the details about implementation of batches is described in the <a href="https://spring.io/projects/spring-batch">spring batch documentation</a>.
 There is nothing special about implementing batches in devonfw. You will find an easy <a href="https://github.com/devonfw/my-thai-star/tree/develop/java/mtsj/batch">example in my-thai-star</a>.</p>
@@ -1726,7 +1763,7 @@ There is nothing special about implementing batches in devonfw. You will find an
 <div class="sect4">
 <h5 id="start-batch">Starting from command line</h5>
 <div class="paragraph">
-<p>Devonfw advises to start batches via command line. This is most common to many ops teams and allows easy integration in existing <a href="spring.html#scheduling">schedulers</a>. In general batches are started with the following command:</p>
+<p>Devonfw advises to start batches via command line. This is most common to many ops teams and allows easy integration in existing <a href="#scheduling">schedulers</a>. In general batches are started with the following command:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1764,7 +1801,7 @@ There is nothing special about implementing batches in devonfw. You will find an
 </div>
 </div>
 <div class="sect4">
-<h5 id="scheduling">Scheduling</h5>
+<h5 id="_scheduling">Scheduling</h5>
 <div class="paragraph">
 <p>In real world scheduling of batches is not as simple as it first might look like.</p>
 </div>
@@ -1791,7 +1828,7 @@ This service could be a complex product or a simple tool like cron. We propose <
 </div>
 </div>
 <div class="sect4">
-<h5 id="handling-restarts">Handling restarts</h5>
+<h5 id="_handling_restarts">Handling restarts</h5>
 <div class="paragraph">
 <p>If you start a job with the same parameters set after a failed run (BatchStatus.FAILED) a restart will occur.
 In many cases your batch should then not reprocess all items it processed in the previous runs.
@@ -1811,7 +1848,7 @@ For that you need some logic to start at the desired offset. There different way
 </ul>
 </div>
 <div class="sect5">
-<h6 id="using-spring-batch-executioncontext-for-restarts">Using spring batch ExecutionContext for restarts</h6>
+<h6 id="_using_spring_batch_executioncontext_for_restarts">Using spring batch ExecutionContext for restarts</h6>
 <div class="paragraph">
 <p>By implementing the <code>ItemStream</code> interface in your <code>ItemReader</code> or <code>ItemWriter</code> you may store information about the batch progress in the <code>ExecutionContext</code>. You will find an example for that in the CountJob in My Thai Star.</p>
 </div>
@@ -1821,9 +1858,9 @@ For that you need some logic to start at the desired offset. There different way
 </div>
 </div>
 <div class="sect4">
-<h5 id="exit-codes">Exit codes</h5>
+<h5 id="_exit_codes">Exit codes</h5>
 <div class="paragraph">
-<p>Your batches should create a meaningful exit code to allow reaction to batch errors e.g. in a <a href="spring.html#scheduling">scheduler</a>.
+<p>Your batches should create a meaningful exit code to allow reaction to batch errors e.g. in a <a href="#scheduling">scheduler</a>.
 For that spring batch automatically registers an <code>org.springframework.boot.autoconfigure.batch.JobExecutionExitCodeGenerator</code>. To make this mechanism work your spring boot app main class as to populate this exit code to the JVM:</p>
 </div>
 <div class="listingblock">
@@ -1845,7 +1882,7 @@ public class SpringBootApp {
 </div>
 </div>
 <div class="sect4">
-<h5 id="stop-batches-and-manage-batch-status">Stop batches and manage batch status</h5>
+<h5 id="_stop_batches_and_manage_batch_status">Stop batches and manage batch status</h5>
 <div class="paragraph">
 <p>Spring batch uses several database tables to store the status of batch executions.
 Each execution may have <a href="https://docs.spring.io/spring-batch/docs/current/reference/html/index-single.html#jobexecution">different status</a>.
@@ -1855,7 +1892,7 @@ E.g. the state will be running, despite the process crashed sometime ago.
 For that cases you have to change the status of the execution in the database.</p>
 </div>
 <div class="sect5">
-<h6 id="cli-tool">CLI-Tool</h6>
+<h6 id="_cli_tool">CLI-Tool</h6>
 <div class="paragraph">
 <p>Devonfw provides a easy to use cli-tool to manage the executing status of your jobs.
 The tool is implemented in the devonfw module <code>devon4j-batch-tool</code>. It will provide a runnable jar, which may be used as follows:</p>
@@ -1883,7 +1920,7 @@ This means that you have to make sure that the corresponding DB driver is in the
 </div>
 </div>
 <div class="sect4">
-<h5 id="authentication">Authentication</h5>
+<h5 id="_authentication">Authentication</h5>
 <div class="paragraph">
 <p>Most business application incorporate authentication and authorization.
 Your spring boot application will implement some kind of security, e.g. integrated login with username+password or in many cases authentication via an existing IAM.
@@ -1951,9 +1988,9 @@ public class BookingsExportBatchConfig {
 </div>
 </div>
 <div class="sect4">
-<h5 id="tipps-tricks">Tipps &amp; tricks</h5>
+<h5 id="_tipps_tricks">Tipps &amp; tricks</h5>
 <div class="sect5">
-<h6 id="identifying-job-parameters">Identifying job parameters</h6>
+<h6 id="_identifying_job_parameters">Identifying job parameters</h6>
 <div class="paragraph">
 <p>Spring uses a jobs parameters to identify <a href="https://docs.spring.io/spring-batch/docs/current/reference/html/domain.html#jobexecution">job executions</a>. Parameters starting with "-" are not considered for identifying a job execution.</p>
 </div>
@@ -1963,17 +2000,17 @@ public class BookingsExportBatchConfig {
 </div>
 </div>
 <div class="sect2">
-<h3 id="guides">2.9. Guides</h3>
+<h3 id="_guides">4.5. Guides</h3>
 <!-- toc disabled -->
 <div class="sect3">
-<h4 id="configuration-2">2.9.1. Configuration</h4>
+<h4 id="_configuration_2">4.5.1. Configuration</h4>
 <div class="sect4">
-<h5 id="internal-application-configuration-2">Internal Application Configuration</h5>
+<h5 id="_internal_application_configuration_2">Internal Application Configuration</h5>
 <div class="paragraph">
 <p>There usually is a main configuration registered with main Spring Boot App, but differing configurations to support automated test of the application can be defined using profiles (not detailed in this guide).</p>
 </div>
 <div class="sect5">
-<h6 id="spring-boot-application">Spring Boot Application</h6>
+<h6 id="_spring_boot_application">Spring Boot Application</h6>
 <div class="paragraph">
 <p>For a complete documentation, see the <a href="http://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference/htmlsingle/">Spring Boot Reference Guide</a>.</p>
 </div>
@@ -2009,7 +2046,7 @@ public class SpringBootApp {
 </div>
 </div>
 <div class="sect5">
-<h6 id="standard-beans-configuration">Standard beans configuration</h6>
+<h6 id="_standard_beans_configuration">Standard beans configuration</h6>
 <div class="paragraph">
 <p>For basic bean configuration we rely on spring boot using mainly configuration classes and only occasionally XML configuration files. Some key principle to understand Spring Boot auto-configuration features:</p>
 </div>
@@ -2037,20 +2074,20 @@ public class SpringBootApp {
 </div>
 </div>
 <div class="sect5">
-<h6 id="beanmapper-configuration">BeanMapper Configuration</h6>
+<h6 id="_beanmapper_configuration">BeanMapper Configuration</h6>
 <div class="paragraph">
 <p>In case you are still using dozer, you will find further details in <a href="guide-beanmapping-spring.asciidoc#bean-mapper-configuration">bean-mapper configuration</a>.</p>
 </div>
 </div>
 <div class="sect5">
-<h6 id="security-configuration">Security configuration</h6>
+<h6 id="_security_configuration">Security configuration</h6>
 <div class="paragraph">
 <p>The abstract base class <code>BaseWebSecurityConfig</code> should be extended to configure web application security thoroughly.
 A basic and secure configuration is provided which can be overridden or extended by subclasses.
 Subclasses must use the <code>@Profile</code> annotation to further discriminate between beans used in production and testing scenarios. See the following example:</p>
 </div>
 <div class="listingblock">
-<div class="title">Listing 14. How to extend <code>BaseWebSecurityConfig</code> for Production and Test</div>
+<div class="title">How to extend <code>BaseWebSecurityConfig</code> for Production and Test</div>
 <div class="content">
 <pre class="highlight"><code class="language-java" data-lang="java">@Configuration
 @EnableWebSecurity
@@ -2068,7 +2105,7 @@ public class WebSecurityConfig extends BaseWebSecurityConfig {...}</code></pre>
 </div>
 </div>
 <div class="sect5">
-<h6 id="websocket-configuration">WebSocket configuration</h6>
+<h6 id="_websocket_configuration">WebSocket configuration</h6>
 <div class="paragraph">
 <p>A websocket endpoint is configured within the business package as a Spring configuration class. The annotation <code>@EnableWebSocketMessageBroker</code> makes Spring Boot registering this endpoint.</p>
 </div>
@@ -2085,9 +2122,9 @@ public class WebSocketConfig extends AbstractWebSocketMessageBrokerConfigurer {
 </div>
 </div>
 <div class="sect4">
-<h5 id="external-application-configuration">External Application Configuration</h5>
+<h5 id="_external_application_configuration">External Application Configuration</h5>
 <div class="sect5">
-<h6 id="application-properties-files">application.properties files</h6>
+<h6 id="_application_properties_files">application.properties files</h6>
 <div class="paragraph">
 <p><a href="https://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html">Here</a> is a list of common properties provided by the Spring framework.</p>
 </div>
@@ -2131,12 +2168,12 @@ public class WebSocketConfig extends AbstractWebSocketMessageBrokerConfigurer {
 </div>
 </div>
 <div class="sect5">
-<h6 id="database-configuration-2">Database Configuration</h6>
+<h6 id="_database_configuration_2">Database Configuration</h6>
 <div class="paragraph">
 <p>The configuration for spring and Hibernate is already provided by devonfw in our sample application and the application template. So you only need to worry about a few things to customize.</p>
 </div>
 <div class="sect6">
-<h7 id="database-system-and-access">Database System and Access</h7>
+<h7 id="_database_system_and_access">Database System and Access</h7>
 <div class="paragraph">
 <p>Obviously you need to configure which type of database you want to use as well as the location and credentials to access it. The defaults are configured in <code>application.properties</code> that is bundled and deployed with the release of the software. The files should therefore contain the properties as in the given example:</p>
 </div>
@@ -2157,7 +2194,7 @@ public class WebSocketConfig extends AbstractWebSocketMessageBrokerConfigurer {
 </div>
 </div>
 <div class="sect6">
-<h7 id="database-logging">Database Logging</h7>
+<h7 id="_database_logging">Database Logging</h7>
 <div class="paragraph">
 <p>Add the following properties to <code>application.properties</code> to enable logging of database queries for debugging purposes.</p>
 </div>
@@ -2172,9 +2209,9 @@ spring.jpa.properties.hibernate.format_sql=true</code></pre>
 </div>
 </div>
 <div class="sect4">
-<h5 id="security-9">Security</h5>
+<h5 id="_security_9">Security</h5>
 <div class="sect5">
-<h6 id="password-encryption-2">Password Encryption</h6>
+<h6 id="_password_encryption_2">Password Encryption</h6>
 <div class="paragraph">
 <p>In order to support encrypted passwords in spring-boot <code>application.properties</code> all you need to do is to add <a href="https://github.com/ulisesbocchio/jasypt-spring-boot#jasypt-spring-boot">jasypt-spring-boot</a> as dependency in your <code>pom.xml</code> (please check for recent version <a href="https://mvnrepository.com/artifact/com.github.ulisesbocchio/jasypt-spring-boot-starter">here</a>):</p>
 </div>
@@ -2271,7 +2308,7 @@ jasypt.encryptor.algorithm=PBEWITHHMACSHA512ANDAES_256</code></pre>
 </div>
 </div>
 <div class="sect4">
-<h5 id="mapping-configuration-to-your-code">Mapping configuration to your code</h5>
+<h5 id="_mapping_configuration_to_your_code">Mapping configuration to your code</h5>
 <div class="paragraph">
 <p>If you are using <code>spring-boot</code> as suggested by <code>devon4j</code> your application can be configured by <code>application.properties</code> file as described in <a href="guide-configuration.asciidoc">configuration</a>.
 To get a single configuration option into your code for flexibility, you can use</p>
@@ -2294,7 +2331,7 @@ private String myConfigurableField;</code></pre>
 <p>You may even use <code>@Value("${my.property.name:my-default-value}")</code> to make the property optional.</p>
 </div>
 <div class="sect5">
-<h6 id="naming-conventions-for-configuration-properties">Naming conventions for configuration properties</h6>
+<h6 id="_naming_conventions_for_configuration_properties">Naming conventions for configuration properties</h6>
 <div class="paragraph">
 <p>As a best practice your configruation properties should follow these naming conventions:</p>
 </div>
@@ -2319,7 +2356,7 @@ private String myConfigurableField;</code></pre>
 </div>
 </div>
 <div class="sect5">
-<h6 id="mapping-advanced-configuration">Mapping advanced configuration</h6>
+<h6 id="_mapping_advanced_configuration">Mapping advanced configuration</h6>
 <div class="paragraph">
 <p>However, in many scenarios you will have features that require more than just one property.
 Injecting those via <code>@Value</code> is not leading to good code quality.
@@ -2387,7 +2424,7 @@ An example for generic configuration from <code>devon4j</code> can be found in
 </div>
 </div>
 <div class="sect5">
-<h6 id="generate-configuration-metadata">Generate configuration metadata</h6>
+<h6 id="_generate_configuration_metadata">Generate configuration metadata</h6>
 <div class="paragraph">
 <p>You should further add this <code>dependency</code> to your module containing the <code>*ConfigProperties</code>:</p>
 </div>
@@ -2410,12 +2447,12 @@ For further details about this please read <a href="https://www.baeldung.com/spr
 </div>
 </div>
 <div class="sect3">
-<h4 id="auditing">2.9.2. Auditing</h4>
+<h4 id="_auditing">4.5.2. Auditing</h4>
 <div class="paragraph">
 <p>For database auditing we use <a href="http://envers.jboss.org/">hibernate envers</a>. If you want to use auditing ensure you have the following dependency in your pom.xml:</p>
 </div>
 <div class="listingblock">
-<div class="title">Listing 15. <strong>spring</strong></div>
+<div class="title"><strong>spring</strong></div>
 <div class="content">
 <pre class="highlight"><code class="language-xml" data-lang="xml">&lt;dependency&gt;
   &lt;groupId&gt;com.devonfw.java.modules&lt;/groupId&gt;
@@ -2424,7 +2461,7 @@ For further details about this please read <a href="https://www.baeldung.com/spr
 </div>
 </div>
 <div class="listingblock">
-<div class="title">Listing 16. <strong>quarkus</strong></div>
+<div class="title"><strong>quarkus</strong></div>
 <div class="content">
 <pre class="highlight"><code class="language-xml" data-lang="xml">&lt;dependency&gt;
   &lt;groupId&gt;io.quarkus&lt;/groupId&gt;
@@ -2503,22 +2540,22 @@ CREATE CACHED TABLE PUBLIC.&lt;TABLE_NAME&gt;_AUD(
 <!-- toc disabled -->
 </div>
 <div class="sect3">
-<h4 id="access-control">2.9.3. Access-Control</h4>
+<h4 id="_access_control">4.5.3. Access-Control</h4>
 <div class="paragraph">
 <p>Access-Control is a central and important aspect of <a href="guide-security.asciidoc">Security</a>. It consists of two major aspects:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="spring.html#authentication">Authentication</a> (Who tries to access?)</p>
+<p><a href="Spring.html#_authentication">Authentication</a> (Who tries to access?)</p>
 </li>
 <li>
-<p><a href="spring.html#authorization">Authorization</a> (Is the one accessing allowed to do what he wants to do?)</p>
+<p><a href="Spring.html#_authorization">Authorization</a> (Is the one accessing allowed to do what he wants to do?)</p>
 </li>
 </ul>
 </div>
 <div class="sect4">
-<h5 id="authentication-2">Authentication</h5>
+<h5 id="_authentication_2">Authentication</h5>
 <div class="paragraph">
 <p>Definition:</p>
 </div>
@@ -2536,7 +2573,7 @@ CREATE CACHED TABLE PUBLIC.&lt;TABLE_NAME&gt;_AUD(
 <p>To prove the authenticity, the user provides some secret called <em>credentials</em>. The most simple form of credentials is a password.</p>
 </div>
 <div class="sect5">
-<h6 id="implementations">Implementations</h6>
+<h6 id="_implementations">Implementations</h6>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -2561,7 +2598,7 @@ Please never implement your own authentication mechanism or credential store. Yo
 </div>
 </div>
 <div class="sect4">
-<h5 id="authorization">Authorization</h5>
+<h5 id="_authorization">Authorization</h5>
 <div class="paragraph">
 <p><strong>Definition:</strong></p>
 </div>
@@ -2573,7 +2610,7 @@ Please never implement your own authentication mechanism or credential store. Yo
 </blockquote>
 </div>
 <div class="sect5">
-<h6 id="clarification-of-terms">Clarification of terms</h6>
+<h6 id="_clarification_of_terms">Clarification of terms</h6>
 <div class="paragraph">
 <p>For clarification we also want to give a common understanding of related terms that have no unique definition and consistent usage in the wild.</p>
 </div>
@@ -2611,7 +2648,7 @@ Please never implement your own authentication mechanism or credential store. Yo
 </table>
 </div>
 <div class="sect5">
-<h6 id="suggestions-on-the-access-model">Suggestions on the access model</h6>
+<h6 id="_suggestions_on_the_access_model">Suggestions on the access model</h6>
 <div class="paragraph">
 <p>For the access model we give the following suggestions:</p>
 </div>
@@ -2645,7 +2682,7 @@ Please never implement your own authentication mechanism or credential store. Yo
 </div>
 </div>
 <div class="sect5">
-<h6 id="naming-conventions-3">Naming conventions</h6>
+<h6 id="_naming_conventions_3">Naming conventions</h6>
 <div class="paragraph">
 <p>As stated above each Access Control is uniquely identified by a human readable string. This string should follow the naming convention:</p>
 </div>
@@ -2702,7 +2739,7 @@ Please never implement your own authentication mechanism or credential store. Yo
 </div>
 </div>
 <div class="sect5">
-<h6 id="devon4j-security">devon4j-security</h6>
+<h6 id="_devon4j_security">devon4j-security</h6>
 <div class="paragraph">
 <p>The module <code>devon4j-security</code> provides ready-to-use code based on <a href="http://projects.spring.io/spring-security/">spring-security</a> that makes your life a lot easier.</p>
 </div>
@@ -2727,7 +2764,7 @@ Please never implement your own authentication mechanism or credential store. Yo
 </div>
 </div>
 <div class="sect5">
-<h6 id="access-control-config">Access Control Config</h6>
+<h6 id="_access_control_config">Access Control Config</h6>
 <div class="paragraph">
 <p>In your application simply extend <code>AccessControlConfig</code> to configure your access control objects as code and reference it from your use-cases. An example config may look like this:</p>
 </div>
@@ -2770,7 +2807,7 @@ public class ApplicationAccessControlConfig extends AccessControlConfig {
 </div>
 </div>
 <div class="sect5">
-<h6 id="configuration-on-java-method-level">Configuration on Java Method level</h6>
+<h6 id="_configuration_on_java_method_level">Configuration on Java Method level</h6>
 <div class="paragraph">
 <p>In your use-case you can now reference a permission like this:</p>
 </div>
@@ -2788,7 +2825,7 @@ public class UcSafeOfferImpl extends ApplicationUc implements UcSafeOffer {
 </div>
 </div>
 <div class="sect5">
-<h6 id="jee-standard">JEE Standard</h6>
+<h6 id="_jee_standard">JEE Standard</h6>
 <div class="paragraph">
 <p><a href="https://en.wikipedia.org/wiki/Role-based_access_control">Role-based Access Control (RBAC)</a> is commonly used for authorization.
 JSR 250 defines a number of common annotations to secure your application.</p>
@@ -2846,7 +2883,7 @@ This class is typically called <code>ApplicationAccessControlConfig</code> in de
 <p>In many complicated cases where <code>@PermitAll</code> <code>@DenyAll</code> <code>@RolesAllowed</code> are insufficient e.g. a method should be accessed by a user in role A and not in role B at the same time, you have to verify the user role directly in the method. You can use <code>SecurityContext</code> class to get further needed information.</p>
 </div>
 <div class="sect6">
-<h7 id="spring-2">Spring</h7>
+<h7 id="_spring_2">Spring</h7>
 <div class="paragraph">
 <p>Spring Security also supports authorization on method level. To use it, you need to add the <code>spring-security-config</code> dependency. If you use Spring Boot, the dependency <code>spring-boot-starter-security</code> already includes <code>spring-security-config</code>. Then you can configure as follows:</p>
 </div>
@@ -2880,20 +2917,20 @@ public class MethodSecurityConfig
 </div>
 </div>
 <div class="sect6">
-<h7 id="quarkus">Quarkus</h7>
+<h7 id="_quarkus">Quarkus</h7>
 <div class="paragraph">
 <p>Quarkus comes with built-in security to allow for RBAC based on the common security annotations <code>@RolesAllowed</code>, <code>@DenyAll</code>, <code>@PermitAll</code> on REST endpoints and CDI beans. Quarkus also provides the <code>io.quarkus.security.Authenticated</code> annotation that will permit any authenticated user to access the resource (equivalent to @RolesAllowed("**")).</p>
 </div>
 </div>
 </div>
 <div class="sect5">
-<h6 id="data-based-permissions">Data-based Permissions</h6>
+<h6 id="_data_based_permissions">Data-based Permissions</h6>
 <div class="paragraph">
 <p>See <a href="guide-data-permission.asciidoc">data permissions</a></p>
 </div>
 </div>
 <div class="sect5">
-<h6 id="access-control-schema-deprecated">Access Control Schema (deprecated)</h6>
+<h6 id="_access_control_schema_deprecated">Access Control Schema (deprecated)</h6>
 <div class="paragraph">
 <p>The <code>access-control-schema.xml</code> approach is deprecated. The documentation can still be found in <a href="guide-access-control-schema.asciidoc">access control schema</a>.</p>
 </div>
@@ -2902,12 +2939,12 @@ public class MethodSecurityConfig
 </div>
 </div>
 <div class="sect4">
-<h5 id="data-permissions">Data-permissions</h5>
+<h5 id="_data_permissions">Data-permissions</h5>
 <div class="paragraph">
 <p>In some projects there are demands for permissions and authorization that is dependent on the processed data. E.g. a user may only be allowed to read or write data for a specific region. This is adding some additional complexity to your authorization. If you can avoid this it is always best to keep things simple. However, in various cases this is a requirement. Therefore the following sections give you guidance and patterns how to solve this properly.</p>
 </div>
 <div class="sect5">
-<h6 id="structuring-your-data">Structuring your data</h6>
+<h6 id="_structuring_your_data">Structuring your data</h6>
 <div class="paragraph">
 <p>For all your business objects (entities) that have to be secured regarding to data permissions we recommend that you create a separate interface that provides access to the relevant data required to decide about the permission. Here is a simple example:</p>
 </div>
@@ -2928,7 +2965,7 @@ public class MethodSecurityConfig
 </div>
 </div>
 <div class="sect5">
-<h6 id="permissions-for-processing-data">Permissions for processing data</h6>
+<h6 id="_permissions_for_processing_data">Permissions for processing data</h6>
 <div class="paragraph">
 <p>When saving or processing objects with a data-permission, we recommend to provide dedicated methods to verify the permission in an abstract base-class such as <code>AbstractUc</code> and simply call this explicitly from your business code. This makes it easy to understand and debug the code. Here is a simple example:</p>
 </div>
@@ -2938,7 +2975,7 @@ public class MethodSecurityConfig
 </div>
 </div>
 <div class="sect6">
-<h7 id="beware-of-aop">Beware of AOP</h7>
+<h7 id="_beware_of_aop">Beware of AOP</h7>
 <div class="paragraph">
 <p>For simple but cross-cutting data-permissions you may also use <a href="guide-aop.asciidoc">AOP</a>. This leads to programming aspects that reflectively scan method arguments and magically decide what to do. Be aware that this quickly gets tricky:</p>
 </div>
@@ -2961,7 +2998,7 @@ public class MethodSecurityConfig
 </div>
 </div>
 <div class="sect5">
-<h6 id="permissions-for-reading-data">Permissions for reading data</h6>
+<h6 id="_permissions_for_reading_data">Permissions for reading data</h6>
 <div class="paragraph">
 <p>When it comes to restrictions on the data to read it becomes even more tricky. In the context of a user only entities shall be loaded from the database he is permitted to read. This is simple for loading a single entity (e.g. by its ID) as you can load it and then if not permitted throw an exception to secure your code. But what if the user is performing a search query to find many entities? For performance reasons we should only find data the user is permitted to read and filter all the rest already via the database query. But what if this is not a requirement for a single query but needs to be applied cross-cutting to tons of queries? Therefore we have the following pattern that solves your problem:</p>
 </div>
@@ -3100,7 +3137,7 @@ public class PermissionCheckerAdvisor implements PointcutAdvisor, Pointcut, Clas
 </div>
 </div>
 <div class="sect5">
-<h6 id="managing-and-granting-the-data-permissions">Managing and granting the data-permissions</h6>
+<h6 id="_managing_and_granting_the_data_permissions">Managing and granting the data-permissions</h6>
 <div class="paragraph">
 <p>Following our <a href="guide-access-control.asciidoc#authorization">authorization guide</a> we can simply create a permission for each country. We might simply reserve a prefix (as virtual <code>«app-id»</code>) for each data-permission to allow granting data-permissions to end-users across all applications of the IT landscape. In our example we could create access controls <code>country.DE</code>, <code>country.US</code>, <code>country.ES</code>, etc. and assign those to the users. The method <code>permissionChecker.getPermittedCountriesForReading()</code> would then scan for these access controls and only return the 2-letter country code from it.</p>
 </div>
@@ -3138,7 +3175,7 @@ Before you make your decisions how to design your access controls please clarify
 </div>
 </div>
 <div class="sect3">
-<h4 id="jwt">2.9.4. JWT</h4>
+<h4 id="_jwt">4.5.4. JWT</h4>
 <div class="paragraph">
 <p><a href="https://jwt.io">JWT</a> (JSON Web Token) is an open standard (see <a href="https://tools.ietf.org/html/rfc7519">RFC 7519</a>) for creating <a href="guide-json.asciidoc">JSON</a> based access tokens that assert some number of claims.
 With an IT landscape divided into multiple smaller apps you want to avoid coupling all those apps or services tightly with your IAM (Identity &amp; Access Management).
@@ -3158,7 +3195,7 @@ For <a href="quarkus.asciidoc">quarkus</a> follow <a href="https://quarkus.io/gu
 <!-- toc disabled -->
 </div>
 <div class="sect3">
-<h4 id="cross-site-request-forgery-csrf">2.9.5. Cross-site request forgery (CSRF)</h4>
+<h4 id="_cross_site_request_forgery_csrf">4.5.5. Cross-site request forgery (CSRF)</h4>
 <div class="paragraph">
 <p>CSRF is a type of malicious exploit of a web application that allows an attacker to induce users to perform actions that they do not intend to perform.</p>
 </div>
@@ -3171,14 +3208,14 @@ For <a href="quarkus.asciidoc">quarkus</a> follow <a href="https://quarkus.io/gu
 <p>More details about csrf can be found at <a href="https://owasp.org/www-community/attacks/csrf" class="bare">https://owasp.org/www-community/attacks/csrf</a>.</p>
 </div>
 <div class="sect4">
-<h5 id="secure-devon4j-server-against-csrf">Secure devon4j server against CSRF</h5>
+<h5 id="_secure_devon4j_server_against_csrf">Secure devon4j server against CSRF</h5>
 <div class="paragraph">
 <p>In case your devon4j server application is not accessed by browsers or the web-client is using <a href="guide-jwt.asciidoc">JWT based authentication</a>, you are already safe according to CSRF.
 However, if your application is accessed from a browser and you are using <em>form based authentication</em> (with session coockie) or <em>basic authentication</em>, you need to enable CSRF protection.
 This guide will tell you how to do this.</p>
 </div>
 <div class="sect5">
-<h6 id="dependency-2">Dependency</h6>
+<h6 id="_dependency_2">Dependency</h6>
 <div class="paragraph">
 <p>To secure your devon4j application against CSRF attacks, you only need to add the following dependency:</p>
 </div>
@@ -3196,7 +3233,7 @@ However, if you have started from an older version or you want to understand mor
 </div>
 </div>
 <div class="sect5">
-<h6 id="pluggable-web-security">Pluggable web-security</h6>
+<h6 id="_pluggable_web_security">Pluggable web-security</h6>
 <div class="paragraph">
 <p>To enable pluggable security via devon4j security starters you need to apply <code>WebSecurityConfigurer</code> to your <code>BaseWebSecurityConfig</code> (your class extending spring-boot&#8217;s <code>WebSecurityConfigurerAdapter</code>) as following:</p>
 </div>
@@ -3216,7 +3253,7 @@ However, if you have started from an older version or you want to understand mor
 </div>
 </div>
 <div class="sect5">
-<h6 id="custom-csrfrequestmatcher">Custom CsrfRequestMatcher</h6>
+<h6 id="_custom_csrfrequestmatcher">Custom CsrfRequestMatcher</h6>
 <div class="paragraph">
 <p>If you want to customize which HTTP requests will require a CSRF token, you can implement your own <code>CsrfRequestMatcher</code> and provide it to the devon4j CSRF protection via qualified injection as following:</p>
 </div>
@@ -3236,7 +3273,7 @@ public class CsrfRequestMatcher implements RequestMatcher {
 </div>
 </div>
 <div class="sect5">
-<h6 id="csrfrestservice">CsrfRestService</h6>
+<h6 id="_csrfrestservice">CsrfRestService</h6>
 <div class="paragraph">
 <p>With the <code>devon4j-starter-security-csrf</code> the <code>CsrfRestService</code> gets integrated into your app.
 It provides an operation to get the CSRF token via an HTTP <code>GET</code> request.
@@ -3258,7 +3295,7 @@ It has to be send with subsequent HTTP requests (when method is other than <code
 </div>
 </div>
 <div class="sect5">
-<h6 id="how-it-works">How it works</h6>
+<h6 id="_how_it_works">How it works</h6>
 <div class="paragraph">
 <p>Putting it all together, a browser client should call the <code>CsrfRestService</code> after successfull login to receive the current CSRF token.
 With every subsequent HTTP request (other than <code>GET</code>) the client has to send this token in the according HTTP header.
@@ -3272,7 +3309,7 @@ This way your application will be secured against CSRF attacks.</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="configure-devon4ng-client-for-csrf">Configure devon4ng client for CSRF</h5>
+<h5 id="_configure_devon4ng_client_for_csrf">Configure devon4ng client for CSRF</h5>
 <div class="paragraph">
 <p>Devon4ng client configuration for CSRF is described <a href="https://github.com/devonfw/devon4ng/blob/develop/documentation/guide-consuming-rest-services.asciidoc">here</a></p>
 </div>
@@ -3281,12 +3318,12 @@ This way your application will be secured against CSRF attacks.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="aspect-oriented-programming-aop">2.9.6. Aspect Oriented Programming (AOP)</h4>
+<h4 id="_aspect_oriented_programming_aop">4.5.6. Aspect Oriented Programming (AOP)</h4>
 <div class="paragraph">
 <p><a href="http://en.wikipedia.org/wiki/Aspect-oriented_programming">AOP</a> is a powerful feature for cross-cutting concerns. However, if used extensive and for the wrong things an application can get unmaintainable. Therefore we give you the best practices where and how to use AOP properly.</p>
 </div>
 <div class="sect4">
-<h5 id="aop-key-principles">AOP Key Principles</h5>
+<h5 id="_aop_key_principles">AOP Key Principles</h5>
 <div class="paragraph">
 <p>We follow these principles:</p>
 </div>
@@ -3305,7 +3342,7 @@ This way your application will be secured against CSRF attacks.</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="aop-usage">AOP Usage</h5>
+<h5 id="_aop_usage">AOP Usage</h5>
 <div class="paragraph">
 <p>We recommend to use AOP with care but we consider it established for the following cross cutting concerns:</p>
 </div>
@@ -3330,7 +3367,7 @@ This way your application will be secured against CSRF attacks.</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="aop-debugging">AOP Debugging</h5>
+<h5 id="_aop_debugging">AOP Debugging</h5>
 <div class="paragraph">
 <p>When using AOP with dynamic proxies the debugging of your code can get nasty. As you can see by the red boxes in the call stack in the debugger there is a lot of magic happening while you often just want to step directly into the implementation skipping all the AOP clutter. When using Eclipse this can easily be archived by enabling <em>step filters</em>. Therefore you have to enable the feature in the Eclipse tool bar (highlighted in read).</p>
 </div>
@@ -3369,9 +3406,9 @@ org.springframework.*</code></pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="exception-handling">2.9.7. Exception Handling</h4>
+<h4 id="_exception_handling">4.5.7. Exception Handling</h4>
 <div class="sect4">
-<h5 id="exception-principles">Exception Principles</h5>
+<h5 id="_exception_principles">Exception Principles</h5>
 <div class="paragraph">
 <p>For exceptions we follow these principles:</p>
 </div>
@@ -3426,7 +3463,7 @@ If you use the <a href="https://github.com/devonfw/devon4j/tree/master/modules/r
 </div>
 </div>
 <div class="sect4">
-<h5 id="exception-example">Exception Example</h5>
+<h5 id="_exception_example">Exception Example</h5>
 <div class="paragraph">
 <p>Here is an exception class from our sample application:</p>
 </div>
@@ -3487,7 +3524,7 @@ If you use the <a href="https://github.com/devonfw/devon4j/tree/master/modules/r
 </div>
 </div>
 <div class="sect4">
-<h5 id="handling-exceptions">Handling Exceptions</h5>
+<h5 id="_handling_exceptions">Handling Exceptions</h5>
 <div class="paragraph">
 <p>For catching and handling exceptions we follow these rules:</p>
 </div>
@@ -3527,7 +3564,7 @@ The exception facade has to &#8230;&#8203;</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="common-errors">Common Errors</h5>
+<h5 id="_common_errors">Common Errors</h5>
 <div class="paragraph">
 <p>The following errors may occur in any devon application:</p>
 </div>
@@ -3563,7 +3600,7 @@ The exception facade has to &#8230;&#8203;</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="internationalization">2.9.8. Internationalization</h4>
+<h4 id="_internationalization">4.5.8. Internationalization</h4>
 <div class="paragraph">
 <p>Internationalization (I18N) is about writing code independent from locale-specific information.
 For I18N of text messages we are suggesting
@@ -3583,7 +3620,7 @@ For I18N of text messages we are suggesting
 </ul>
 </div>
 <div class="sect4">
-<h5 id="binding-locale-information-to-the-user">Binding locale information to the user</h5>
+<h5 id="_binding_locale_information_to_the_user">Binding locale information to the user</h5>
 <div class="paragraph">
 <p>We have defined two different points to bind locale information to user, depending on user is authenticated or not.</p>
 </div>
@@ -3607,7 +3644,7 @@ For I18N of text messages we are suggesting
 </div>
 </div>
 <div class="sect4">
-<h5 id="getting-internationalizated-messages">Getting internationalizated messages</h5>
+<h5 id="_getting_internationalizated_messages">Getting internationalizated messages</h5>
 <div class="paragraph">
 <p>devonfw has a bean that manage i18n message resolution, the <code>ApplicationLocaleResolver.</code> This bean is responsible to get the current user and extract locale information from it and read the correct properties file to get the message.</p>
 </div>
@@ -3638,18 +3675,18 @@ For I18N of text messages we are suggesting
 </div>
 </div>
 <div class="sect3">
-<h4 id="service-client">2.9.9. Service Client</h4>
+<h4 id="_service_client">4.5.9. Service Client</h4>
 <div class="paragraph">
 <p>This guide is about consuming (calling) services from other applications (micro-services). For providing services, see the <a href="guide-service-layer.asciidoc">Service-Layer Guide</a>. Services can be consumed by the <a href="guide-client-layer.asciidoc">client</a> or the server. As the client is typically not written in Java, you should consult the according guide for your client technology. In case you want to call a service within your Java code, this guide is the right place to get help.</p>
 </div>
 <div class="sect4">
-<h5 id="motivation-4">Motivation</h5>
+<h5 id="_motivation_4">Motivation</h5>
 <div class="paragraph">
 <p>Various solutions already exist for calling services, such as <code>RestTemplate</code> from spring or the JAX-RS client API. Furthermore, each and every service framework offers its own API as well. These solutions might be suitable for very small and simple projects (with one or two such invocations). However, with the trend of microservices, the invocation of a service becomes a very common use-case that occurs all over the place. You typically need a solution that is very easy to use but supports flexible configuration, adding headers for authentication, mapping of errors from the server, logging success/errors with duration for performance analysis, support for synchronous and asynchronous invocations, etc. This is exactly what this <code>devon4j</code> service-client solution brings to you.</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="usage">Usage</h5>
+<h5 id="_usage">Usage</h5>
 <div class="paragraph">
 <p><strong>Spring</strong></p>
 </div>
@@ -3667,9 +3704,9 @@ For I18N of text messages we are suggesting
 </div>
 </div>
 <div class="sect3">
-<h4 id="testing">2.9.10. Testing</h4>
+<h4 id="_testing">4.5.10. Testing</h4>
 <div class="sect4">
-<h5 id="general-best-practices">General best practices</h5>
+<h5 id="_general_best_practices">General best practices</h5>
 <div class="paragraph">
 <p>For testing please follow our general best practices:</p>
 </div>
@@ -3679,7 +3716,7 @@ For I18N of text messages we are suggesting
 <p>Tests should have a clear goal that should also be documented.</p>
 </li>
 <li>
-<p>Tests have to be classified into different <a href="spring.html#integration-levels">integration levels</a>.</p>
+<p>Tests have to be classified into different <a href="#integration-levels">integration levels</a>.</p>
 </li>
 <li>
 <p>Tests should follow a clear naming convention.</p>
@@ -3731,10 +3768,10 @@ For I18N of text messages we are suggesting
 </div>
 </div>
 <div class="sect4">
-<h5 id="test-automation-technology-stack">Test Automation Technology Stack</h5>
+<h5 id="_test_automation_technology_stack">Test Automation Technology Stack</h5>
 <div class="paragraph">
-<p>For test automation we use <a href="http://junit.org/">JUnit</a>. However, we are strictly doing all assertions with <a href="http://joel-costigliola.github.io/assertj/">AssertJ</a>. For <a href="spring.html#test-doubles">mocking</a> we use <a href="http://mockito.org/">Mockito</a>.
-In order to mock remote connections we use <a href="spring.html#wiremock">WireMock</a>.</p>
+<p>For test automation we use <a href="http://junit.org/">JUnit</a>. However, we are strictly doing all assertions with <a href="http://joel-costigliola.github.io/assertj/">AssertJ</a>. For <a href="#test-doubles">mocking</a> we use <a href="http://mockito.org/">Mockito</a>.
+In order to mock remote connections we use <a href="#wiremock">WireMock</a>.</p>
 </div>
 <div class="paragraph">
 <p>For testing entire components or sub-systems we recommend to use for Spring stack <a href="https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-testing.html">spring-boot-starter-test</a> as lightweight and fast testing infrastructure that is already shipped with <code>devon4j-test</code>. For Quarkus, you can add the necessary extensions manually such as <code>quarkus-junit5</code>, <code>quarkus-junit5-mockito</code>, <code>assertj-core</code> etc.</p>
@@ -3744,7 +3781,7 @@ In order to mock remote connections we use <a href="spring.html#wiremock">WireMo
 </div>
 </div>
 <div class="sect4">
-<h5 id="test-doubles">Test Doubles</h5>
+<h5 id="_test_doubles">Test Doubles</h5>
 <div class="paragraph">
 <p>We use <a href="http://xunitpatterns.com/Using%20Test%20Doubles.html">test doubles</a> as generic term for mocks, stubs, fakes, dummies, or spys to avoid confusion. Here is a short summary from <a href="http://martinfowler.com/articles/mocksArentStubs.html">stubs VS mocks</a>:</p>
 </div>
@@ -3768,7 +3805,7 @@ In order to mock remote connections we use <a href="spring.html#wiremock">WireMo
 <p>We try to give some examples, which should make it somehow clearer:</p>
 </div>
 <div class="sect5">
-<h6 id="stubs">Stubs</h6>
+<h6 id="_stubs">Stubs</h6>
 <div class="paragraph">
 <p>Best Practices for applications:</p>
 </div>
@@ -3787,7 +3824,7 @@ In order to mock remote connections we use <a href="spring.html#wiremock">WireMo
 </div>
 </div>
 <div class="sect5">
-<h6 id="mocks">Mocks</h6>
+<h6 id="_mocks">Mocks</h6>
 <div class="paragraph">
 <p>Best Practices for applications:</p>
 </div>
@@ -3806,7 +3843,7 @@ In order to mock remote connections we use <a href="spring.html#wiremock">WireMo
 </div>
 </div>
 <div class="sect5">
-<h6 id="wiremock">WireMock</h6>
+<h6 id="_wiremock">WireMock</h6>
 <div class="paragraph">
 <p>If you need to mock remote connections such as HTTP-Servers, WireMock offers easy to use functionality. For a full description see the <a href="http://wiremock.org/">homepage</a> or the <a href="https://github.com/tomakehurst/wiremock">github repository</a>. Wiremock can be used either as a JUnit Rule, in Java outside of JUnit or as a standalone process. The mocked server can be configured to respond to specific requests in a given way via a fluent Java API, JSON files and JSON over HTTP. An example as an integration to JUnit can look as follows.</p>
 </div>
@@ -3866,13 +3903,13 @@ public void faultTest() {
 </div>
 </div>
 <div class="sect4">
-<h5 id="integration-levels">Integration Levels</h5>
+<h5 id="_integration_levels">Integration Levels</h5>
 <div class="paragraph">
 <p>There are many discussions about the right level of integration for test automation. Sometimes it is better to focus on small, isolated modules of the system - whatever a "module" may be. In other cases it makes more sense to test integrated groups of modules. Because there is no universal answer to this question, devonfw only defines a common terminology for what could be tested. Each project must make its own decision where to put the focus of test automation. There is no worldwide accepted terminology for the integration levels of testing. In general we consider <a href="http://istqbexamcertification.com/what-are-software-testing-levels/">ISTQB</a>. However, with a technical focus on test automation we want to get more precise.</p>
 </div>
 <div class="paragraph">
 <p>The following picture shows a simplified view of an application based on the <a href="architecture.asciidoc#technical-architecture">devonfw reference architecture</a>. We define four integration levels that are explained in detail below.
-The boxes in the picture contain parenthesized numbers. These numbers depict the lowest integration level, a box belongs to. Higher integration levels also contain all boxes of lower integration levels. When writing tests for a given integration level, related boxes with a lower integration level must be replaced by test <a href="spring.html#test-doubles">doubles</a> or drivers.</p>
+The boxes in the picture contain parenthesized numbers. These numbers depict the lowest integration level, a box belongs to. Higher integration levels also contain all boxes of lower integration levels. When writing tests for a given integration level, related boxes with a lower integration level must be replaced by test <a href="#test-doubles">doubles</a> or drivers.</p>
 </div>
 <div class="imageblock text-center">
 <div class="content">
@@ -3886,18 +3923,18 @@ The boxes in the picture contain parenthesized numbers. These numbers depict the
 <p>Consider, that more infrastructure does not automatically lead to a better bug-detection. There may be bugs in your software that are masked by bugs in the infrastructure. The best way to find those bugs is to test with very few infrastructure.</p>
 </div>
 <div class="paragraph">
-<p>External systems do not belong to any of the integration levels defined here. devonfw does not recommend involving real external systems in test automation. This means, they have to be replaced by test <a href="spring.html#test-doubles">doubles</a> in automated tests. An exception may be external systems that are fully under control of the own development team.</p>
+<p>External systems do not belong to any of the integration levels defined here. devonfw does not recommend involving real external systems in test automation. This means, they have to be replaced by test <a href="#test-doubles">doubles</a> in automated tests. An exception may be external systems that are fully under control of the own development team.</p>
 </div>
 <div class="paragraph">
 <p>The following chapters describe the four integration levels.</p>
 </div>
 <div class="sect5">
-<h6 id="level-1-module-test">Level 1 Module Test</h6>
+<h6 id="_level_1_module_test">Level 1 Module Test</h6>
 <div class="paragraph">
 <p>The goal of a <em>isolated module test</em> is to provide fast feedback to the developer. Consequently, isolated module tests must not have any interaction with the client, the database, the file system, the network, etc.</p>
 </div>
 <div class="paragraph">
-<p>An isolated module test is testing a single classes or at least a small set of classes in isolation. If such classes depend on other components or external resources, etc. these shall be replaced with a <a href="spring.html#test-doubles">test double</a>.</p>
+<p>An isolated module test is testing a single classes or at least a small set of classes in isolation. If such classes depend on other components or external resources, etc. these shall be replaced with a <a href="#test-doubles">test double</a>.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -3922,11 +3959,11 @@ The boxes in the picture contain parenthesized numbers. These numbers depict the
 </div>
 </div>
 <div class="sect5">
-<h6 id="level-2-component-test">Level 2 Component Test</h6>
+<h6 id="_level_2_component_test">Level 2 Component Test</h6>
 <div class="paragraph">
 <p>A <a href="http://istqbexamcertification.com/what-is-component-testing/"><em>component test</em></a> aims to test components or component parts as a unit.
 These tests can access resources such as a database (e.g. for DAO tests).
-Further, no remote communication is intended here. Access to external systems shall be replaced by a <a href="spring.html#test-doubles">test double</a>.</p>
+Further, no remote communication is intended here. Access to external systems shall be replaced by a <a href="#test-doubles">test double</a>.</p>
 </div>
 <div class="ulist">
 <ul>
@@ -3980,7 +4017,7 @@ public class UcFindCountryTest {
 </div>
 </div>
 <div class="sect5">
-<h6 id="level-3-subsystem-test">Level 3 Subsystem Test</h6>
+<h6 id="_level_3_subsystem_test">Level 3 Subsystem Test</h6>
 <div class="paragraph">
 <p>A <em>subsystem test</em> runs against the external interfaces (e.g. HTTP service) of the integrated subsystem. Subsystem tests of the client subsystem are described in the <a href="https://github.com/devonfw/devon4ng/blob/master/documentation/guide-testing.asciidoc">devon4ng testing guide</a>. In devon4j the server (JEE application) is the subsystem under test. The tests act as a client (e.g. service consumer) and the server has to be integrated and started in a container.</p>
 </div>
@@ -4025,16 +4062,16 @@ public class CountryRestServiceTest extends SubsystemTest {
 </div>
 </div>
 <div class="sect5">
-<h6 id="level-4-system-test">Level 4 System Test</h6>
+<h6 id="_level_4_system_test">Level 4 System Test</h6>
 <div class="paragraph">
-<p>A <a href="http://istqbexamcertification.com/what-is-system-testing/"><em>system test</em></a> has the goal to test the system as a whole against its official interfaces such as its UI or batches. The system itself runs as a separate process in a way close to a regular deployment. Only external systems are simulated by <a href="spring.html#test-doubles">test doubles</a>.</p>
+<p>A <a href="http://istqbexamcertification.com/what-is-system-testing/"><em>system test</em></a> has the goal to test the system as a whole against its official interfaces such as its UI or batches. The system itself runs as a separate process in a way close to a regular deployment. Only external systems are simulated by <a href="#test-doubles">test doubles</a>.</p>
 </div>
 <div class="paragraph">
 <p>The devonfw only gives advice for automated system test (TODO see allure testing framework). In nearly every project there must be manual system tests, too. This manual system tests are out of scope here.</p>
 </div>
 </div>
 <div class="sect5">
-<h6 id="classifying-integration-levels">Classifying Integration-Levels</h6>
+<h6 id="_classifying_integration_levels">Classifying Integration-Levels</h6>
 <div class="paragraph">
 <p>For Spring stack, devon4j defines <a href="https://github.com/devonfw/devon4j/tree/develop/modules/test/src/main/java/com/devonfw/module/test/common/api/category">Category-Interfaces</a> that shall be used as <a href="https://github.com/junit-team/junit/wiki/Categories">JUnit Categories</a>.
 Also devon4j provides <a href="https://github.com/devonfw/devon4j/tree/develop/modules/test/src/main/java/com/devonfw/module/test/common/base">abstract base classes</a> that you may extend in your test-cases if you like.</p>
@@ -4045,21 +4082,21 @@ Also devon4j provides <a href="https://github.com/devonfw/devon4j/tree/develop/m
 </div>
 </div>
 <div class="sect4">
-<h5 id="implementation-4">Implementation</h5>
+<h5 id="_implementation_4">Implementation</h5>
 <div class="paragraph">
 <p>This section introduces how to implement tests on the different levels with the given devonfw infrastructure and the proposed frameworks.
 For Spring, see <a href="spring/guide-spring-testing.asciidoc#implementation">Spring Test Implementation</a></p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="regression-testing">Regression testing</h5>
+<h5 id="_regression_testing">Regression testing</h5>
 <div class="paragraph">
 <p>When it comes to complex output (even binary) that you want to regression test by comparing with an expected result, you sould consider <a href="https://approvaltests.com/">Approval Tests</a> using <a href="https://github.com/approvals/approvaltests.java">ApprovalTests.Java</a>.
 If applied for the right problems, it can be very helpful.</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="deployment-pipeline">Deployment Pipeline</h5>
+<h5 id="_deployment_pipeline">Deployment Pipeline</h5>
 <div class="paragraph">
 <p>A deployment pipeline is a semi-automated process that gets software-changes from version control into production. It contains several validation steps, e.g. automated tests of all integration levels.
 Because devon4j should fit to different project types - from agile to waterfall - it does not define a standard deployment pipeline. But we recommend to define such a deployment pipeline explicitly for each project and to find the right place in it for each type of test.</p>
@@ -4072,13 +4109,13 @@ Because devon4j should fit to different project types - from agile to waterfall 
 </div>
 </div>
 <div class="sect4">
-<h5 id="test-coverage">Test Coverage</h5>
+<h5 id="_test_coverage">Test Coverage</h5>
 <div class="paragraph">
 <p>We are using tools (SonarQube/Jacoco) to measure the coverage of the tests. Please always keep in mind that the only reliable message of a code coverage of X% is that (100-X)% of the code is entirely untested. It does not say anything about the quality of the tests or the software though it often relates to it.</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="test-configuration">Test Configuration</h5>
+<h5 id="_test_configuration">Test Configuration</h5>
 <div class="paragraph">
 <p>This section covers test configuration in general without focusing on integration levels as in the first chapter.</p>
 </div>
@@ -4093,7 +4130,7 @@ Because devon4j should fit to different project types - from agile to waterfall 
 </ul>
 </div>
 <div class="sect5">
-<h6 id="configure-test-specific-beans">Configure Test Specific Beans</h6>
+<h6 id="_configure_test_specific_beans">Configure Test Specific Beans</h6>
 <div class="paragraph">
 <p>Sometimes it can become handy to provide other or differently configured bean implementations via CDI than those available in production. For example, when creating beans using <code>@Bean</code>-annotated methods they are usually configured within those methods. <a href="https://github.com/devonfw/my-thai-star/blob/develop/java/mtsj/core/src/main/java/com/devonfw/application/mtsj/general/service/impl/config/WebSecurityBeansConfig.java">WebSecurityBeansConfig</a> shows an example of such methods.</p>
 </div>
@@ -4145,25 +4182,25 @@ public class SomeTestClass {
 </div>
 </div>
 <div class="sect5">
-<h6 id="test-data">Test Data</h6>
+<h6 id="_test_data">Test Data</h6>
 <div class="paragraph">
 <p>It is possible to obtain test data in two different ways depending on your test&#8217;s integration level.</p>
 </div>
 </div>
 </div>
 <div class="sect4">
-<h5 id="debugging-tests">Debugging Tests</h5>
+<h5 id="_debugging_tests">Debugging Tests</h5>
 <div class="paragraph">
 <p>The following two sections describe two debugging approaches for tests. Tests are either run from within the IDE or from the command line using Maven.</p>
 </div>
 <div class="sect5">
-<h6 id="debugging-with-the-ide">Debugging with the IDE</h6>
+<h6 id="_debugging_with_the_ide">Debugging with the IDE</h6>
 <div class="paragraph">
 <p>Debugging with the IDE is as easy as always. Even if you want to execute a <code>SubsystemTest</code> which needs a Spring context and a server infrastructure to run properly, you just set your breakpoints and click on Debug As &#8594; JUnit Test. The test infrastructure will take care of initializing the necessary infrastructure - if everything is configured properly.</p>
 </div>
 </div>
 <div class="sect5">
-<h6 id="debugging-with-maven">Debugging with Maven</h6>
+<h6 id="_debugging_with_maven">Debugging with Maven</h6>
 <div class="paragraph">
 <p>Please refer to the following two links to find a guide for debugging tests when running them from Maven.</p>
 </div>
@@ -4204,7 +4241,7 @@ To counter this problem you can simply execute a single test class through the f
 </div>
 </div>
 <div class="sect3">
-<h4 id="transfer-objects">2.9.11. Transfer-Objects</h4>
+<h4 id="_transfer_objects">4.5.11. Transfer-Objects</h4>
 <div class="paragraph">
 <p>The technical data model is defined in form of <a href="guide-jpa.asciidoc#entity">persistent entities</a>.
 However, passing persistent entities via <em>call-by-reference</em> across the entire application will soon cause problems:</p>
@@ -4268,17 +4305,17 @@ In such case you also need <a href="guide-beanmapping.asciidoc">beanmapping</a> 
 <div style="page-break-after: always;"></div>
 </div>
 <div class="sect3">
-<h4 id="bean-mapping-in-devon4j-spring">2.9.12. Bean Mapping in devon4j-spring</h4>
+<h4 id="_bean_mapping_in_devon4j_spring">4.5.12. Bean Mapping in devon4j-spring</h4>
 <div class="paragraph">
 <p>We have developed a solution that uses a <code>BeanMapper</code> that allows to abstract from the underlying implementation. As mentioned in the <a href="../guide-beanmapping.asccidoc">general bean mapping guide</a>, we started with <a href="http://dozer.sourceforge.net/documentation/about.html">Dozer</a> a Java Bean to Java Bean mapper that recursively copies data from one object to another. Now we recommend using <a href="https://orika-mapper.github.io/orika-docs/">Orika</a>. This guide will show an introduction to Orika and Dozer bean-mapper.</p>
 </div>
 <div class="sect4">
-<h5 id="bean-mapper-dependency">Bean-Mapper Dependency</h5>
+<h5 id="_bean_mapper_dependency">Bean-Mapper Dependency</h5>
 <div class="paragraph">
 <p>To get access to the <code>BeanMapper</code> we have to use either of the below dependency in our POM:</p>
 </div>
 <div class="listingblock">
-<div class="title">Listing 17. <strong>Orika</strong></div>
+<div class="title"><strong>Orika</strong></div>
 <div class="content">
 <pre class="highlight"><code class="language-xml" data-lang="xml">&lt;dependency&gt;
     &lt;groupId&gt;com.devonfw.java.modules&lt;/groupId&gt;
@@ -4288,7 +4325,7 @@ In such case you also need <a href="guide-beanmapping.asciidoc">beanmapping</a> 
 </div>
 </div>
 <div class="listingblock">
-<div class="title">Listing 18. <strong>Dozer</strong></div>
+<div class="title"><strong>Dozer</strong></div>
 <div class="content">
 <pre class="highlight"><code class="language-xml" data-lang="xml">&lt;dependency&gt;
     &lt;groupId&gt;com.devonfw.java.modules&lt;/groupId&gt;
@@ -4299,9 +4336,9 @@ In such case you also need <a href="guide-beanmapping.asciidoc">beanmapping</a> 
 </div>
 </div>
 <div class="sect4">
-<h5 id="bean-mapper-configuration">Bean-Mapper Configuration</h5>
+<h5 id="_bean_mapper_configuration">Bean-Mapper Configuration</h5>
 <div class="sect5">
-<h6 id="bean-mapper-configuration-using-dozer">Bean-Mapper Configuration using Dozer</h6>
+<h6 id="_bean_mapper_configuration_using_dozer">Bean-Mapper Configuration using Dozer</h6>
 <div class="paragraph">
 <p>The <code>BeanMapper</code> implementation is based on an existing open-source bean-mapping framework.
 In case of Dozer the mapping is configured <code>src/main/resources/config/app/common/dozer-mapping.xml</code>.</p>
@@ -4325,7 +4362,7 @@ Important is that you configure all your custom datatypes as <code>&lt;copy-by-r
 </div>
 </div>
 <div class="sect4">
-<h5 id="bean-mapper-configuration-using-orika">Bean-Mapper Configuration using Orika</h5>
+<h5 id="_bean_mapper_configuration_using_orika">Bean-Mapper Configuration using Orika</h5>
 <div class="paragraph">
 <p>Orika with devonfw is configured by default and sets some custom mappings for <em>GenericEntity.java</em> to <em>GenericEntityDto.java</em>. To specify and customize the mappings you can create the class <em>BeansOrikaConfig.java</em> that extends the class <em>BaseOrikaConfig.java</em> from the <strong>devon4j.orika</strong> package. To register a basic mapping, register a <strong>ClassMap</strong> for the <strong>mapperFactory</strong> with your custom mapping. Watch the example below and follow the <a href="https://orika-mapper.github.io/orika-docs/mappings-via-classmapbuilder.html">basic Orika mapping configuration guide</a> and the <a href="https://orika-mapper.github.io/orika-docs/advanced-mappings.html">Orika advanced mapping guide</a>.</p>
 </div>
@@ -4343,7 +4380,7 @@ Important is that you configure all your custom datatypes as <code>&lt;copy-by-r
 </div>
 </div>
 <div class="sect4">
-<h5 id="bean-mapper-usage">Bean-Mapper Usage</h5>
+<h5 id="_bean_mapper_usage">Bean-Mapper Usage</h5>
 <div class="paragraph">
 <p>Then we can get the <code>BeanMapper</code> via <a href="guide-dependency-injection.asciidoc">dependency-injection</a> what we typically already provide by an abstract base class (e.g. <code>AbstractUc</code>). Now we can solve our problem very easy:</p>
 </div>
@@ -4360,7 +4397,7 @@ return getBeanMapper().map(resultEntity, UserEto.class);</code></pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="datatypes">2.9.13. Datatypes</h4>
+<h4 id="_datatypes">4.5.13. Datatypes</h4>
 <div class="quoteblock">
 <blockquote>
 <div class="paragraph">
@@ -4417,7 +4454,7 @@ It is suitable and in most cases also recommended to use the class implementing 
 <p>See <a href="http://m-m-m.sourceforge.net/apidocs/net/sf/mmm/util/lang/api/Datatype.html">mmm datatype javadoc</a>.</p>
 </div>
 <div class="sect4">
-<h5 id="datatype-packaging">Datatype Packaging</h5>
+<h5 id="_datatype_packaging">Datatype Packaging</h5>
 <div class="paragraph">
 <p>For the devonfw we use a common <a href="coding-conventions.asciidoc#packages">packaging schema</a>.
 The specifics for datatypes are as following:</p>
@@ -4455,27 +4492,27 @@ The specifics for datatypes are as following:</p>
 </table>
 </div>
 <div class="sect4">
-<h5 id="technical-concerns">Technical Concerns</h5>
+<h5 id="_technical_concerns">Technical Concerns</h5>
 <div class="paragraph">
 <p>Many technologies like Dozer and QueryDSL&#8217;s (alias API) are heavily based on reflection. For them to work properly with custom datatypes, the frameworks must be able to instantiate custom datatypes with no-argument constructors. It is therefore recommended to implement a no-argument constructor for each datatype of at least protected visibility.</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="datatypes-in-entities">Datatypes in Entities</h5>
+<h5 id="_datatypes_in_entities">Datatypes in Entities</h5>
 <div class="paragraph">
 <p>The usage of custom datatypes in entities is explained in the <a href="guide-jpa.asciidoc#entities-and-datatypes">persistence layer guide</a>.</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="datatypes-in-transfer-objects">Datatypes in Transfer-Objects</h5>
+<h5 id="_datatypes_in_transfer_objects">Datatypes in Transfer-Objects</h5>
 <div class="sect5">
-<h6 id="xml-2">XML</h6>
+<h6 id="_xml_2">XML</h6>
 <div class="paragraph">
 <p>For mapping datatypes with JAXB see <a href="guide-xml.asciidoc">XML guide</a>.</p>
 </div>
 </div>
 <div class="sect5">
-<h6 id="json-2">JSON</h6>
+<h6 id="_json_2">JSON</h6>
 <div class="paragraph">
 <p>For mapping datatypes from and to JSON see <a href="guide-json#json-custom-mapping.asciidoc">JSON custom mapping</a>.</p>
 </div>
@@ -4485,9 +4522,9 @@ The specifics for datatypes are as following:</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="cors-configuration-in-spring">2.9.14. CORS configuration in Spring</h4>
+<h4 id="_cors_configuration_in_spring">4.5.14. CORS configuration in Spring</h4>
 <div class="sect4">
-<h5 id="dependency-3">Dependency</h5>
+<h5 id="_dependency_3">Dependency</h5>
 <div class="paragraph">
 <p>To enable the CORS support from the server side for your devon4j-Spring application, add the below dependency:</p>
 </div>
@@ -4501,7 +4538,7 @@ The specifics for datatypes are as following:</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="configuration-3">Configuration</h5>
+<h5 id="_configuration_3">Configuration</h5>
 <div class="paragraph">
 <p>Add the below properties in your application.properties file:</p>
 </div>
@@ -4561,7 +4598,7 @@ security.cors.pathPattern=/**</code></pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="microservices-in-devonfw">2.9.15. Microservices in devonfw</h4>
+<h4 id="_microservices_in_devonfw">4.5.15. Microservices in devonfw</h4>
 <div class="paragraph">
 <p>The Microservices architecture is an approach for application development based on a series of <em>small</em> services grouped under a business domain. Each individual service runs autonomously and communicating with each other through their APIs. That independence between the different services allows to manage (upgrade, fix, deploy, etc.) each one without affecting the rest of the system&#8217;s services. In addition to that the microservices architecture allows to scale specific services when facing an increment of the requests, so the applications based on microservices are more flexible and stable, and can be adapted quickly to demand changes.</p>
 </div>
@@ -4616,7 +4653,7 @@ security.cors.pathPattern=/**</code></pre>
 <!-- toc disabled -->
 </div>
 <div class="sect3">
-<h4 id="caching">2.9.16. Caching</h4>
+<h4 id="_caching">4.5.16. Caching</h4>
 <div class="paragraph">
 <p>Caching is a technical approach to improve performance. While it may appear easy on the first sight it is an advanced topic. In general, try to use caching only when required for performance reasons. If you come to the point that you need caching first think about:</p>
 </div>
@@ -4637,18 +4674,18 @@ Is a local cache sufficient or do you need a shared cache?</p>
 </ul>
 </div>
 <div class="sect4">
-<h5 id="local-cache">Local Cache</h5>
+<h5 id="_local_cache">Local Cache</h5>
 
 </div>
 <div class="sect4">
-<h5 id="shared-cache">Shared Cache</h5>
+<h5 id="_shared_cache">Shared Cache</h5>
 <div class="sect5">
-<h6 id="distributed-cache">Distributed Cache</h6>
+<h6 id="_distributed_cache">Distributed Cache</h6>
 
 </div>
 </div>
 <div class="sect4">
-<h5 id="products">Products</h5>
+<h5 id="_products">Products</h5>
 <div class="ulist">
 <ul>
 <li>
@@ -4667,7 +4704,7 @@ Is a local cache sufficient or do you need a shared cache?</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="caching-of-web-resources">Caching of Web-Resources</h5>
+<h5 id="_caching_of_web_resources">Caching of Web-Resources</h5>
 <div class="ulist">
 <ul>
 <li>
@@ -4686,12 +4723,12 @@ Is a local cache sufficient or do you need a shared cache?</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="feature-toggles">2.9.17. Feature-Toggles</h4>
+<h4 id="_feature_toggles">4.5.17. Feature-Toggles</h4>
 <div class="paragraph">
 <p>The most software developing teams use Feature-Branching to be able to work in parallel and maintain a stable main branch in the VCS. However Feature-Branching might not be the ideal tool in every case because of big merges and isolation between development groups. In many cases, Feature-Toggles can avoid some of these problems, so these should definitely be considered to be used in the collaborative software development.</p>
 </div>
 <div class="sect4">
-<h5 id="implementation-with-the-devonfw">Implementation with the devonfw</h5>
+<h5 id="_implementation_with_the_devonfw">Implementation with the devonfw</h5>
 <div class="paragraph">
 <p>To use Feature-Toggles with the devonfw, use the Framework <a href="http://www.togglz.org/">Togglz</a> because it has all the features generally needed and provides a great documentation.</p>
 </div>
@@ -4699,7 +4736,7 @@ Is a local cache sufficient or do you need a shared cache?</p>
 <p>For a pretty minimal working example, also see <a href="https://github.com/florianluediger/oasp4j">this fork</a>.</p>
 </div>
 <div class="sect5">
-<h6 id="preparation">Preparation</h6>
+<h6 id="_preparation">Preparation</h6>
 <div class="paragraph">
 <p>The following example takes place in the <code>oasp-sample-core</code> project, so the necessary dependencies have to be added to the according <code>pom.xml</code> file. Required are the main Togglz project including Spring support, the Togglz console to graphically change the feature state and the Spring security package to handle authentication for the Togglz console.</p>
 </div>
@@ -4737,7 +4774,7 @@ togglz.console.secured=false</code></pre>
 </div>
 </div>
 <div class="sect5">
-<h6 id="small-features">Small features</h6>
+<h6 id="_small_features">Small features</h6>
 <div class="paragraph">
 <p>For small features, a simple query of the toggle state is often enough to achieve the desired functionality. To illustrate this, a simple example follows, which implements a toggle to limit the page size returned by the staffmanagement. See <a href="https://github.com/florianluediger/oasp4j/commit/e55c3c7cfcb42efe4f279dc673cced730abd580a">here</a> for further details.</p>
 </div>
@@ -4788,7 +4825,7 @@ togglz.console.secured=false</code></pre>
 </div>
 </div>
 <div class="sect5">
-<h6 id="extensive-features">Extensive features</h6>
+<h6 id="_extensive_features">Extensive features</h6>
 <div class="paragraph">
 <p>When implementing extensive features, you might want to consider using the strategy design pattern to maintain the overview of your software. The following example is an implementation of a feature which adds a 25% discount to all products managed by the offermanagement.</p>
 </div>
@@ -4853,12 +4890,12 @@ private PaginatedListTo&lt;OfferEntity&gt; addDiscountToOffers(PaginatedListTo&l
 </div>
 </div>
 <div class="sect4">
-<h5 id="guidelines-for-a-successful-use-of-feature-toggles">Guidelines for a successful use of feature-toggles</h5>
+<h5 id="_guidelines_for_a_successful_use_of_feature_toggles">Guidelines for a successful use of feature-toggles</h5>
 <div class="paragraph">
 <p>The use of feature-toggles requires a specified set of guidelines to maintain the overview on the software. The following is a collection of considerations and examples for conventions that are reasonable to use.</p>
 </div>
 <div class="sect5">
-<h6 id="minimize-the-number-of-toggles">Minimize the number of toggles</h6>
+<h6 id="_minimize_the_number_of_toggles">Minimize the number of toggles</h6>
 <div class="paragraph">
 <p>When using too many toggles at the same time, it is hard to maintain a good overview of the system and things like finding bugs are getting much harder. Additionally, the management of toggles in the configuration interface gets more difficult due to the amount of toggles.</p>
 </div>
@@ -4867,7 +4904,7 @@ private PaginatedListTo&lt;OfferEntity&gt; addDiscountToOffers(PaginatedListTo&l
 </div>
 </div>
 <div class="sect5">
-<h6 id="consistent-naming-scheme">Consistent naming scheme</h6>
+<h6 id="_consistent_naming_scheme">Consistent naming scheme</h6>
 <div class="paragraph">
 <p>A consistent naming scheme is the key to a structured and easily maintainable set of features. This should include the naming of toggles in the source code and the appropriate naming of commit messages in the VCS. The following section contains an example for a useful naming scheme including a small example.</p>
 </div>
@@ -4904,13 +4941,13 @@ DISCOUNT: Add the feature-toggle to the offermanagement implementation.</code></
 </div>
 </div>
 <div class="sect5">
-<h6 id="placement-of-toggle-points">Placement of toggle points</h6>
+<h6 id="_placement_of_toggle_points">Placement of toggle points</h6>
 <div class="paragraph">
 <p>To maintain a clean codebase, you definitely want to avoid using the same toggle in different places in the software. There should be one single query of the toggle which should be able to toggle the whole functionality of the feature. If one single toggle point is not enough to switch the whole feature on or off, you might want to think about splitting the feature into multiple ones.</p>
 </div>
 </div>
 <div class="sect5">
-<h6 id="use-of-fine-grained-features">Use of fine-grained features</h6>
+<h6 id="_use_of_fine_grained_features">Use of fine-grained features</h6>
 <div class="paragraph">
 <p>Bigger features in general should be split into multiple sub-features to maintain the overview on the codebase. These sub-features get their own feature-toggle and get implemented independently.</p>
 </div>
@@ -4920,7 +4957,7 @@ DISCOUNT: Add the feature-toggle to the offermanagement implementation.</code></
 </div>
 </div>
 <div class="sect3">
-<h4 id="accessibility">2.9.18. Accessibility</h4>
+<h4 id="_accessibility">4.5.18. Accessibility</h4>
 <div class="paragraph">
 <p>TODO</p>
 </div>
@@ -4949,7 +4986,7 @@ devon4j-kafka has been abandoned. Its main feature was the implementation of a r
 </div>
 </div>
 <div class="sect3">
-<h4 id="messaging-services">2.9.19. Messaging Services</h4>
+<h4 id="_messaging_services">4.5.19. Messaging Services</h4>
 <div class="paragraph">
 <p>Messaging Services provide an asynchronous communication mechanism between applications. Technically this is implemented using <a href="http://kafka.apache.org/documentation.html">Apache Kafka</a> .</p>
 </div>
@@ -4964,12 +5001,12 @@ For more details, check the <a href="spring/guide-kafka-spring.asciidoc">devon4j
 <!-- toc disabled -->
 </div>
 <div class="sect3">
-<h4 id="messaging">2.9.20. Messaging</h4>
+<h4 id="_messaging">4.5.20. Messaging</h4>
 <div class="paragraph">
 <p>Messaging in Java is done using the <a href="https://en.wikipedia.org/wiki/Java_Message_Service">JMS</a> standard from JEE.</p>
 </div>
 <div class="sect4">
-<h5 id="products-2">Products</h5>
+<h5 id="_products_2">Products</h5>
 <div class="paragraph">
 <p>For messaging you need to choose a JMS provider such as:</p>
 </div>
@@ -4988,12 +5025,12 @@ For more details, check the <a href="spring/guide-kafka-spring.asciidoc">devon4j
 </div>
 </div>
 <div class="sect4">
-<h5 id="receiver">Receiver</h5>
+<h5 id="_receiver">Receiver</h5>
 <div class="paragraph">
 <p>As a receiver of messages is receiving data from other systems it is located in the <a href="guide-service-layer.asciidoc">service-layer</a>.</p>
 </div>
 <div class="sect5">
-<h6 id="jms-listener">JMS Listener</h6>
+<h6 id="_jms_listener">JMS Listener</h6>
 <div class="paragraph">
 <p>A <code>JmsListener</code> is a class listening and consuming JMS messages. It should carry the suffix <code>JmsListener</code> and implement the <code>MessageListener</code> interface or have its listener method annotated with <code>@JmsListener</code>. This is illustrated by the following example:</p>
 </div>
@@ -5024,7 +5061,7 @@ public class BookingJmsListener /* implements MessageListener */ {
 </div>
 </div>
 <div class="sect4">
-<h5 id="sender">Sender</h5>
+<h5 id="_sender">Sender</h5>
 <div class="paragraph">
 <p>The sending of JMS messages is considered as any other sending of data like <a href="guide-kafka.asciidoc">kafka</a> messages or RPC calls via <a href="guide-rest.asciidoc">REST</a> using <a href="guide-service-client.asciidoc">service-client</a>, gRPC, etc.
 This will typically happen directly from a <a href="guide-usecase.asciidoc">use-case</a> in the <a href="guide-logic-layer.asciidoc">logic-layer</a>.
@@ -5036,12 +5073,12 @@ With spring we can simply use <a href="https://docs.spring.io/spring-framework/d
 </div>
 </div>
 <div class="sect3">
-<h4 id="full-text-search">2.9.21. Full Text Search</h4>
+<h4 id="_full_text_search">4.5.21. Full Text Search</h4>
 <div class="paragraph">
 <p>If you want to all your users fast and simple searches with just a single search field (like in google), you need full text indexing and search support.</p>
 </div>
 <div class="sect4">
-<h5 id="solutions">Solutions</h5>
+<h5 id="_solutions">Solutions</h5>
 <div class="ulist">
 <ul>
 <li>
@@ -5073,182 +5110,9 @@ With spring we can simply use <a href="https://docs.spring.io/spring-framework/d
 </div>
 </div>
 <div class="sect4">
-<h5 id="best-practices">Best Practices</h5>
+<h5 id="_best_practices">Best Practices</h5>
 <div class="paragraph">
 <p>TODO</p>
-</div>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="tutorials">2.10. Tutorials</h3>
-<!-- toc disabled -->
-<div class="sect3">
-<h4 id="creating-a-new-application">2.10.1. Creating a new application</h4>
-<div class="sect4">
-<h5 id="running-the-archetype">Running the archetype</h5>
-<div class="paragraph">
-<p>In order to create a new application you must use the archetype provided by devon4j which uses the maven archetype functionality.</p>
-</div>
-<div class="paragraph">
-<p>To create a new application, you should have installed devonfw IDE. Follow the devon ide documentation to install
-the same.
-You can choose between 2 alternatives, create it from command line or, in more visual manner, within eclipse.</p>
-</div>
-<div class="sect5">
-<h6 id="from-command-line">From command Line</h6>
-<div class="paragraph">
-<p>To create a new devon4j application from command line, you can simply run the following command:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">devon java create com.example.application.sampleapp</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>For low-level creation you can also manually call this command:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">mvn -DarchetypeVersion=${devon4j.version} -DarchetypeGroupId=com.devonfw.java.templates -DarchetypeArtifactId=devon4j-template-server archetype:generate -DgroupId=com.example.application -DartifactId=sampleapp -Dversion=1.0.0-SNAPSHOT -Dpackage=com.devonfw.application.sampleapp</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Attention: The <code>archetypeVersion</code> (first argument) should be set to the latest version of <code>devon4j</code>. You can easily determine the version from this badge:
-<span class="image"><img src="https://javadoc.io/badge2/com.devonfw.java.modules/devon4j-basic/javadoc.svg" alt="latest devon4j version"></span></p>
-</div>
-<div class="paragraph">
-<p>Further providing additional properties (using <code>-D</code> parameter) you can customize the generated app:</p>
-</div>
-<table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 16. Options for app template</caption>
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top"><strong>property</strong></th>
-<th class="tableblock halign-left valign-top"><strong>comment</strong></th>
-<th class="tableblock halign-left valign-top"><strong>example</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>dbType</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Choose the type of RDBMS to use (<code>hana</code>, <code>oracle</code>, <code>mssql</code>, <code>postgresql</code>, <code>mariadb</code>, <code>mysql</code>, etc.)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>-DdbTpye=postgresql</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>batch</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Option to add an <code>batch</code> module</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>-Dbatch=batch</code></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect5">
-<h6 id="from-eclipse">From Eclipse</h6>
-<div class="literalblock">
-<div class="content">
-<pre>After that, you should follow this Eclipse steps to create your application:</pre>
-</div>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Create a new Maven Project.</p>
-</li>
-<li>
-<p>Choose the devon4j-template-server archetype, just like the image.</p>
-</li>
-</ul>
-</div>
-<div class="imageblock text-center">
-<div class="content">
-<img src="images/eclipse-m2e-create-devon4j-project.png" alt="Select archetype">
-</div>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Fill the Group Id, Artifact Id, Version and Package for your project.</p>
-</li>
-</ul>
-</div>
-<div class="imageblock text-center">
-<div class="content">
-<img src="images/eclipse-m2e-create-devon4j-project-parameters.png" alt="Configure archetype">
-</div>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Finish the Eclipse assistant and you are ready to start your project.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect4">
-<h5 id="what-is-generated">What is generated</h5>
-<div class="paragraph">
-<p>The application template (archetype) generates a Maven multi-module project. It has the following modules:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>api</code>: module with the API (REST service interfaces, transferobjects, datatypes, etc.) to be imported by other apps as a maven dependency in order to invoke and consume the offered (micro)services.</p>
-</li>
-<li>
-<p><code>core</code>: maven module containing the core of the application.</p>
-</li>
-<li>
-<p><code>batch</code>: optional module for <a href="guide-batch-layer.asciidoc">batch</a>(es)</p>
-</li>
-<li>
-<p><code>server</code>: module that bundles the entire app (<code>core</code> with optional <code>batch</code>) as a WAR file.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>The toplevel <code>pom.xml</code> of the generated project has the following features:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Properties definition: Spring-boot version, Java version, etc.</p>
-</li>
-<li>
-<p>Modules definition for the modules (described above)</p>
-</li>
-<li>
-<p>Dependency management: define versions for dependencies of the technology stack that are recommended and work together in a compatible way.</p>
-</li>
-<li>
-<p>Maven plugins with desired versions and configuration</p>
-</li>
-<li>
-<p>Profiles for <a href="guide-testing.asciidoc">test stages</a></p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect4">
-<h5 id="how-to-run-your-app">How to run your app</h5>
-<div class="sect5">
-<h6 id="run-app-from-ide">Run app from IDE</h6>
-<div class="paragraph">
-<p>To run your application from your favourite IDE, simply launch <code>SpringBootApp</code> as java application.</p>
-</div>
-</div>
-<div class="sect5">
-<h6 id="run-app-as-bootified-jar-or-war">Run app as bootified jar or war</h6>
-<div class="paragraph">
-<p>More details are available <a href="guide-structure-classic.asciidoc#deployment">here</a>.</p>
-</div>
-<!-- toc disabled -->
 </div>
 </div>
 </div>
@@ -5256,7 +5120,7 @@ You can choose between 2 alternatives, create it from command line or, in more v
 </div>
 </div>
 <div class="paragraph nav-footer">
-<p>← Previous: <a href="General.html">General</a> | ↑ Up: <a href="devon4j.html">Java</a> | Next: <a href="quarkus-2.html">Quarkus</a> →</p>
+<p>← Previous: <a href="General.html">General</a> | ↑ Up: <a href="devon4j-documentation.html">Java</a> | ⌂ Home: <a href="sample.html">MultipageHtml5Converter Sample</a> | Next: <a href="Quarkus.html">Quarkus</a> →</p>
 </div>
 </div>
 <div id="footnotes">
@@ -5270,7 +5134,7 @@ You can choose between 2 alternatives, create it from command line or, in more v
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-03-16 15:16:17 +0100
+Last updated 2022-03-21 12:54:18 +0100
 </div>
 </div>
 </body>

@@ -6,7 +6,13 @@ Author Name
 // The default multipage-level value is 1 (split into chapters)
 :multipage-level: 0
 
-This sample document attempts to to showcase and recreate the devonfw website using the MultipageHtml5Converter.
+This sample document attempts to showcase the features of the
+MultipageHtml5Converter extension and also acts as a test fixture.
+The HTML output can be generated using the command given in the README.
+
+These three paragraphs are in the "preamble" area (the first has the `lead`
+attribute). This content belongs to the root-level node and is written to the
+main output file (`sample.html`, by default).
 
 [[root-inline,root inline anchor]]This paragraph has a titled inline anchor
 with id `\[[root-inline]]`. It is linked from <<xrefs2>>.
@@ -62,9 +68,9 @@ the main output file (<<sample,sample.html>> by default)
 ... <<xrefs2>> – content node → included in parent node
 
 [multipage-level=1]
-[[custom-level]]
+[[devon4j-documentation]]
 [desc="Shows a custom multipage-level value and additional features"]
-= Custom Level Part
+= Java
 
 This second part has `multipage-level=1` set, which causes level-1 nodes to be
 leaf nodes (split into chapters). Nodes above that level are branch (or root)
@@ -74,35 +80,277 @@ The first part, <<about-sample>>, has no `multipage-level` attribute set, so
 it uses the document-level attribute, which is `multipage-level=0` (split into
 parts).
 
-[[custom-chapter-1]]
-== One Chapter
+[multipage-level=1]
+[[General]]
+== General
 
-This is a level-1 chapter, and attribute value `multipage-level=1` is set at
-parent node "<<custom-level>>", so this is generated as a leaf node. All
-descendant nodes are generated as content nodes.
+Here you will find documentation and code-patterns for developing with Java in general, independent of the framework you choose.
 
-[[xrefs1]]
-=== Cross-References
+<<<<
 
-This section is a level-2 node and attribute value `multipage-level=1` is set
-at ancestor node "<<custom-level>>". Therefore, this section is generated as a
-content node (and is included in its parent node).
+include::guide-configuration.asciidoc[leveloffset=+2]
 
-* See <<xrefs2>> (on another page).
-* See the <<xrefs2-inline>> on another page.
-* See <<sample>> (the document id/title and root node).
+<<<<
 
-[[custom-chapter-2]]
-== Another Chapter
+include::coding-conventions.asciidoc[leveloffset=+2]
 
-This chapter is a leaf node and contains one section.
+include::guide-structure.asciidoc[leveloffset=+2]
 
-[[xrefs2]]
-=== More Cross-References
+include::guide-dependency-injection.asciidoc[leveloffset=+2]
 
-This section is a level-2 node, and is generated as a content node.
+include::guide-blob-support.asciidoc[leveloffset=+2]
 
-* See <<xrefs1>> (on another page).
-* [[xrefs2-inline,xrefs2 inline anchor]]This list item has a titled inline
-  anchor with id `\[[xrefs2-inline]]`, and is linked from <<xrefs1>>.
-* See the <<root-inline>> on the root page.
+<<<<
+
+include::guide-common.asciidoc[leveloffset=+2]
+
+<<<<
+
+include::guide-jpa.asciidoc[leveloffset=+2]
+
+include::guide-jpa-query.asciidoc[leveloffset=+3]
+
+include::guide-repository.asciidoc[leveloffset=+3]
+
+include::guide-dao.asciidoc[leveloffset=+3]
+
+include::guide-jpa-performance.asciidoc[leveloffset=+3]
+
+include::guide-jpa-idref.asciidoc[leveloffset=+3]
+
+<<<<
+
+include::guide-transactions.asciidoc[leveloffset=+3]
+
+<<<<
+
+include::guide-sql.asciidoc[leveloffset=+2]
+
+<<<<
+
+include::guide-database-migration.asciidoc[leveloffset=+2]
+
+include::guide-flyway.asciidoc[leveloffset=+3]
+
+include::guide-liquibase.asciidoc[leveloffset=+3]
+
+<<<<
+
+include::guide-rest.asciidoc[leveloffset=+2]
+
+<<<<
+
+include::guide-json.asciidoc[leveloffset=+2]
+
+<<<<
+
+include::guide-xml.asciidoc[leveloffset=+2]
+
+<<<<
+
+include::guide-soap.asciidoc[leveloffset=+2]
+
+<<<<
+
+include::guide-logging.asciidoc[leveloffset=+2]
+
+<<<<
+
+include::guide-monitoring.asciidoc[leveloffset=+2]
+
+include::guide-log-monitoring.asciidoc[leveloffset=+2]
+
+include::guide-apm.asciidoc[leveloffset=+2]
+
+<<<<
+
+include::guide-security.asciidoc[leveloffset=+2]
+
+<<<<
+
+include::guide-cors-support.asciidoc[leveloffset=+2]
+
+<<<<
+
+include::guide-jdk.asciidoc[leveloffset=+2]
+
+<<<<
+
+include::guide-jee.asciidoc[leveloffset=+2]
+
+<<<<
+
+include::guide-validation.asciidoc[leveloffset=+2]
+
+<<<<
+
+include::guide-beanmapping.asciidoc[leveloffset=+2]
+
+
+include::guide-lombok.asciidoc[leveloffset=+2]
+
+<<<<
+
+include::guide-openapi.asciidoc[leveloffset=+2]
+
+<<<<
+
+[multipage-level=1]
+[[Spring]]
+== Spring
+
+include::spring.asciidoc[leveloffset=+2]
+
+include::guide-component.asciidoc[leveloffset=+2]
+
+include::guide-structure-classic.asciidoc[leveloffset=+2]
+
+<<<<
+
+=== Layers
+
+include::guide-client-layer.asciidoc[leveloffset=+3]
+
+<<<<
+
+include::guide-service-layer.asciidoc[leveloffset=+3]
+
+include::guide-service-versioning.asciidoc[leveloffset=+3]
+
+<<<<
+
+include::guide-logic-layer.asciidoc[leveloffset=+3]
+
+include::guide-component-facade.asciidoc[leveloffset=+3]
+
+include::guide-usecase.asciidoc[leveloffset=+3]
+
+<<<<
+
+include::guide-dataaccess-layer.asciidoc[leveloffset=+3]
+
+<<<<
+
+include::guide-batch-layer.asciidoc[leveloffset=+3]
+
+<<<<
+
+=== Guides
+
+include::spring/guide-spring-configuration.asciidoc[leveloffset=+3]
+
+include::guide-configuration-mapping.asciidoc[leveloffset=+4]
+
+<<<<
+
+include::guide-auditing.asciidoc[leveloffset=+3]
+
+<<<<
+
+include::guide-access-control.asciidoc[leveloffset=+3]
+
+<<<<
+
+include::guide-data-permission.asciidoc[leveloffset=+4]
+
+<<<<
+
+include::guide-jwt.asciidoc[leveloffset=+3]
+
+<<<<
+
+include::guide-csrf.asciidoc[leveloffset=+3]
+
+<<<<
+
+include::guide-aop.asciidoc[leveloffset=+3]
+
+<<<<
+
+include::guide-exceptions.asciidoc[leveloffset=+3]
+
+<<<<
+
+include::guide-i18n.asciidoc[leveloffset=+3]
+
+<<<<
+
+include::guide-service-client.asciidoc[leveloffset=+3]
+
+<<<<
+
+include::guide-testing.asciidoc[leveloffset=+3]
+
+<<<<
+
+include::guide-transferobject.asciidoc[leveloffset=+3]
+
+
+<<<<
+
+include::spring/guide-beanmapping-spring.asciidoc[leveloffset=+3]
+
+<<<<
+
+include::guide-datatype.asciidoc[leveloffset=+3]
+
+<<<<
+
+include::spring/guide-cors-spring.asciidoc[leveloffset=+3]
+
+<<<<
+
+include::guide-microservice.asciidoc[leveloffset=+3]
+
+<<<<
+
+include::guide-caching.asciidoc[leveloffset=+3]
+
+<<<<
+
+include::guide-feature-toggle.asciidoc[leveloffset=+3]
+
+<<<<
+
+include::guide-accessibility.asciidoc[leveloffset=+3]
+
+<<<<
+
+include::guide-kafka.asciidoc[leveloffset=+3]
+
+<<<<
+
+include::guide-jms.asciidoc[leveloffset=+3]
+
+<<<<
+
+include::guide-text-search.asciidoc[leveloffset=+3]
+
+[multipage-level=1]
+[[Quarkus]]
+== Quarkus
+
+include::tutorial-newapp.asciidoc[leveloffset=+2]
+
+include::quarkus.asciidoc[leveloffset=+2]
+
+include::quarkus/getting-started-quarkus.asciidoc[leveloffset=+2]
+
+include::guide-migration-spring-quarkus.asciidoc[leveloffset=+2]
+
+include::Spring-native-vs-Quarkus.asciidoc[leveloffset=+2]
+
+include::guide-structure-modern.asciidoc[leveloffset=+2]
+
+include::guide-domain-layer.asciidoc[leveloffset=+2]
+
+<<<<
+
+=== Guides
+
+include::quarkus/getting-started-for-spring-developers.asciidoc[leveloffset=+3]
+include::quarkus/guide-quarkus-configuration.asciidoc[leveloffset=+3]
+include::Spring-native-vs-Quarkus.asciidoc[leveloffset=+3]
+include::quarkus/quarkus-template.asciidoc[leveloffset=+3]
+include::quarkus/guide-native-image.asciidoc[leveloffset=+3]
+include::quarkus/guide-beanmapping-quarkus.asciidoc[leveloffset=+3]

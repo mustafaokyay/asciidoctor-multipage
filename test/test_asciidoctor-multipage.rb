@@ -3,8 +3,8 @@ require 'asciidoctor'
 require 'asciidoctor-multipage'
 
 class AsciidoctorMultipageTest < Minitest::Test
-  def test_black_box_docs
-    dir = 'test/black-box-docs'
+  def devpm_docs
+    dir = 'test/devon'
     test_only = ENV["BB_TEST_ONLY"]
     update_files = ENV["BB_UPDATE_FILES"].to_i
     Dir.foreach(dir) do |filename|
@@ -12,7 +12,7 @@ class AsciidoctorMultipageTest < Minitest::Test
       doc_path = File.join(dir, filename)
       next unless File.directory?(doc_path)
       next if test_only and test_only != filename
-      adoc_path = File.join(doc_path, filename + '.adoc')
+      adoc_path = File.join(doc_path, filename + '.doc')
       doc = Asciidoctor.convert_file(adoc_path,
                                      :to_dir => 'test/out',
                                      :to_file => true,

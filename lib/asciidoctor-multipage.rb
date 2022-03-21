@@ -1,6 +1,42 @@
 # coding: utf-8
+#
+# Extends the Html5Converter to generate multiple pages from the document tree.
+#
+# Features:
+#
+# - Generates a root (top level) landing page with a list of child sections.
+# - Generates branch (intermediate level) landing pages as required, each with
+#   a list of child sections.
+# - Generates leaf (content level) pages with the actual content.
+# - Allows the chunking depth to be configured with the `multipage-level`
+#   document attribute (the default is 1—split into chapters).
+# - Supports variable chunking depth between sections in the document (by
+#   setting the `multipage-level` attribute on individual sections).
+# - Uses section IDs to name each page (eg. "introduction.html").
+# - Supports cross-references between pages.
+# - Generates a full Table of Contents for each page, but with relevant entries
+#   only (the TOC collapses as required for each page).
+# - Includes a description for each section on the branch/leaf landing pages
+#   (from the `desc` attribute, if set).
+# - Generates previous/up/home/next navigation links for each page.
+# - Allows the TOC entry for the current page to be styled with CSS.
+# - Supports standalone and embedded (--no-header-footer) HTML output.
+# - Retains correct section numbering throughout.
+#
+# Notes and limitations:
+#
+# - Tested with Asciidoctor 1.5.7.1; inline anchors in unordered list items
+#   require the fix for asciidoctor issue #2812.
+# - This extension is tightly coupled with Asciidoctor internals, and future
+#   changes in Asciidoctor may require updates here. Hopefully this extension
+#   exposes ways in which the Asciidoctor API can be improved.
+# - Footnotes are currently not supported.
+# - Please contribute fixes and enhancements!
+#
+# Usage:
+#
+#   asciidoctor -r ./multipage-html5-converter.rb -b multipage_html5 book.adoc
 
-require 'asciidoctor'
 require 'asciidoctor/converter/html5'
 
 class Asciidoctor::AbstractBlock
@@ -18,7 +54,6 @@ class Asciidoctor::AbstractNode
       node_tree << current
       current = current.parent
     end
-    node_tree << current
     if node_tree.include?(self) ||
        node_tree.include?(self.parent)
       return true
@@ -53,14 +88,6 @@ class Asciidoctor::Document
   # nodes are no longer accessible.
   attr_writer :sectnum
 
-  # A pointer to the original converter (first converter instantiated to
-  # convert the original document). As we create additional documents
-  # ourselves, AsciiDoctor will instantiate additional instances of
-  # MultipageHtml5Converter for each created document. These instances need
-  # to share state, so they can use the original converter instance
-  # for that purpose.
-  attr_accessor :mp_root
-
   # Override the AbstractBlock sections?() check to enable the Table Of
   # Contents. This extension may generate short pages that would normally have
   # no need for a TOC. However, we override the Html5Converter outline() in
@@ -86,11 +113,17 @@ class Asciidoctor::Section
   # Sections. The sectnum is saved in section() below.
   def sectnum(delimiter = '.', append = nil)
     append ||= (append == false ? '' : delimiter)
-    if @level > 1 and @parent.class == Asciidoctor::Section ||
-                      (@mplevel && @parent.class == Asciidoctor::Document)
-        %(#{@parent.sectnum(delimiter)}#{@numeral}#{append})
-    else
-      %(#{@numeral}#{append})
+    if @level == 1
+      %(#{@number}#{append})
+    elsif @level > 1
+      if @parent.class == Asciidoctor::Section ||
+         (@mplevel && @parent.class == Asciidoctor::Document)
+        %(#{@parent.sectnum(delimiter)}#{@number}#{append})
+      else
+        %(#{@number}#{append})
+      end
+    else # @level == 0
+      %(#{Asciidoctor::Helpers.int_to_roman @number}#{append})
     end
   end
 end
@@ -101,14 +134,6 @@ class MultipageHtml5Converter < Asciidoctor::Converter::Html5Converter
   include Asciidoctor::Writer
 
   register_for 'multipage_html5'
-
-  attr_accessor :pages
-
-  # contains the entire outline of the top-level document, used
-  # as a guide-rail for creating TOC elements for documents we
-  # split off. Only expected to be set in the top-level converter
-  # (see AsciiDoctor::Document::mp_root)
-  attr_accessor :full_outline
 
   def initialize(backend, opts = {})
     @xml_mode = false
@@ -127,32 +152,15 @@ class MultipageHtml5Converter < Asciidoctor::Converter::Html5Converter
     page << block
   end
 
-  # ensures that the AsciiDoctor::Document::mp_root is correctly
-  # set on the document object. The variable could have already been
-  # set if we created the document ourselves
-  # (see ::MultipageHtml5Converter::convert_section), in which case it's
-  # not changed. If the documented is "nested", then we expect the parent
-  # document to already have it set. Otherwise, this is expected to be
-  # a top-level document, and we assign ourselves as its original converter.
-  def check_root(doc)
-    unless doc.mp_root
-      if doc.nested?
-        doc.mp_root = doc.parent_document.mp_root
-      else
-        doc.mp_root = self
-      end
-    end
+  def convert(node, transform = nil, opts = {})
+    transform ||= node.node_name
+    opts.empty? ? (send transform, node) : (send transform, node, opts)
   end
 
   # Process Document (either the original full document or a processed page)
-  def convert_document(node)
-
-    # make sure document has original converter reference
-    check_root(node)
-
+  def document(node)
     if node.processed
-      # This node (an individual page) can now be handled by
-      # Html5Converter.
+      # This node can now be handled by Html5Converter.
       super
     else
       # This node is the original full document which has not yet been
@@ -178,7 +186,6 @@ class MultipageHtml5Converter < Asciidoctor::Converter::Html5Converter
       # Set multipage chunk types
       set_multipage_attrs(node)
 
-      # FIXME: This can result in a duplicate ID without a warning.
       # Set the "id" attribute for the Document, using the "docname", which is
       # based on the file name. Then register the document ID using the
       # document title. This allows cross-references to refer to (1) the
@@ -196,28 +203,21 @@ class MultipageHtml5Converter < Asciidoctor::Converter::Html5Converter
       # Generate navigation links for all pages
       generate_nav_links(node)
 
-      # Create and save a skeleton document for generating the TOC lists,
-      # but don't attempt to create outline for nested documents.
-      unless node.nested?
-        # if the original converter has the @full_outline set already, we are about
-        # to replace it. That's not supposed to happen, and probably means we encountered
-        # a document structure we aren't prepared for. Log an error and move on.
-        logger.error "Regenerating document outline, something wrong?" if node.mp_root.full_outline
-        node.mp_root.full_outline = new_outline_doc(node)
-      end
-
+      # Create and save a skeleton document for generating the TOC lists.
+      @@full_outline = new_outline_doc(node)
       # Save the document catalog to use for each part/chapter page.
       @catalog = node.catalog
 
       # Retain any book intro blocks, delete others, and add a list of sections
       # for the book landing page.
       parts_list = Asciidoctor::List.new(node, :ulist)
+      parts_list.style = "toc"
       node.blocks.delete_if do |block|
         if block.context == :section
           part = block
           part.convert
           text = %(<<#{part.id},#{part.captioned_title}>>)
-          if (desc = block.attr('desc')) then text << %( – #{desc}) end
+          if desc = block.attr('desc') then text << %( – #{desc}) end
           parts_list << Asciidoctor::ListItem.new(parts_list, text)
         end
       end
@@ -234,17 +234,14 @@ class MultipageHtml5Converter < Asciidoctor::Converter::Html5Converter
 
   # Process Document in embeddable mode (either the original full document or a
   # processed page)
-  def convert_embedded(node)
-    # make sure document has original converter reference
-    check_root(node)
+  def embedded(node)
     if node.processed
-      # This node (an individual page) can now be handled by
-      # Html5Converter.
+      # This node can now be handled by Html5Converter.
       super
     else
       # This node is the original full document which has not yet been
-      # processed; it can be handled by convert_document().
-      convert_document(node)
+      # processed; it can be handled by document().
+      document(node)
     end
   end
 
@@ -260,21 +257,20 @@ class MultipageHtml5Converter < Asciidoctor::Converter::Html5Converter
         previous_page = pages[page_index-1]
         parent_page = page.parent
         home_page = doc
-        # NOTE: There are some non-breaking spaces (U+00A0) below, in
-        # the "links <<" lines and "links.join" line.
+        # NOTE, there are some non-breaking spaces (U+00A0) below.
         if previous_page != parent_page
-          links << %(← #{doc.attr('multipage-nav-previous-label') || "Previous"}: <<#{previous_page.id},#{previous_page.captioned_title}>>)
+          links << %(← Previous: <<#{previous_page.id}>>)
         end
-        links << %(↑ #{doc.attr('multipage-nav-up-label') || "Up"}: <<#{parent_page.id},#{parent_page.captioned_title}>>)
-        links << %(⌂ #{doc.attr('multipage-nav-home-label') || "Home"}: <<#{home_page.id},#{home_page.captioned_title}>>) if home_page != parent_page
+        links << %(↑ Up: <<#{parent_page.id}>>)
+        links << %(⌂ Home: <<#{home_page.id}>>) if home_page != parent_page
       end
       if page_index != pages.length-1
         next_page = pages[page_index+1]
-        links << %(#{doc.attr('multipage-nav-next-label') || "Next"}: <<#{next_page.id},#{next_page.captioned_title}>> →)
+        links << %(Next: <<#{next_page.id}>> →)
       end
       block = Asciidoctor::Block.new(parent = doc,
                                      context = :paragraph,
-                                     opts = {:source => links.join(' | '),
+                                     opts = {:source => links.join(' | '),
                                              :subs => :default})
       page.nav_links = block.content
     end
@@ -282,12 +278,13 @@ class MultipageHtml5Converter < Asciidoctor::Converter::Html5Converter
   end
 
   # Generate the actual HTML outline for the TOC. This method is analogous to
-  # Html5Converter convert_outline().
+  # Html5Converter outline().
   def generate_outline(node, opts = {})
-    # Do the same as Html5Converter convert_outline() here
-    return unless node.sections? && node.sections.length > 0
-    sectnumlevels = opts[:sectnumlevels] || (node.document.attributes['sectnumlevels'] || 3).to_i
-    toclevels = opts[:toclevels] || (node.document.attributes['toclevels'] || 2).to_i
+    # This is the same as Html5Converter outline()
+    return unless node.sections?
+    return if node.sections.empty?
+    sectnumlevels = opts[:sectnumlevels] || (node.document.attr 'sectnumlevels', 3).to_i
+    toclevels = opts[:toclevels] || (node.document.attr 'toclevels', 2).to_i
     sections = node.sections
     result = [%(<ul class="sectlevel#{sections[0].level}">)]
     sections.each do |section|
@@ -295,17 +292,7 @@ class MultipageHtml5Converter < Asciidoctor::Converter::Html5Converter
       if section.caption
         stitle = section.captioned_title
       elsif section.numbered && slevel <= sectnumlevels
-        if slevel < 2 && node.document.doctype == 'book'
-          if section.sectname == 'chapter'
-            stitle =  %(#{(signifier = node.document.attributes['chapter-signifier']) ? "#{signifier} " : ''}#{section.sectnum} #{section.title})
-          elsif section.sectname == 'part'
-            stitle =  %(#{(signifier = node.document.attributes['part-signifier']) ? "#{signifier} " : ''}#{section.sectnum nil, ':'} #{section.title})
-          else
-            stitle = %(#{section.sectnum} #{section.title})
-          end
-        else
-          stitle = %(#{section.sectnum} #{section.title})
-        end
+        stitle = %(#{section.sectnum} #{section.title})
       else
         stitle = section.title
       end
@@ -332,12 +319,12 @@ class MultipageHtml5Converter < Asciidoctor::Converter::Html5Converter
       end
       result << %(<li><a href="#{link}">#{stitle}</a>)
 
-      # Finish in a manner similar to Html5Converter convert_outline()
+      # Finish in a manner similar to Html5Converter outline()
       if slevel < toclevels &&
          (child_toc_level = generate_outline section,
-                                             toclevels: toclevels,
-                                             secnumlevels: sectnumlevels,
-                                             page_id: opts[:page_id])
+                                        :toclevels => toclevels,
+                                        :secnumlevels => sectnumlevels,
+                                        :page_id => opts[:page_id])
         result << child_toc_level
       end
       result << '</li>'
@@ -348,7 +335,7 @@ class MultipageHtml5Converter < Asciidoctor::Converter::Html5Converter
 
   # Include chapter pages in cross-reference links. This method overrides for
   # the :xref node type only.
-  def convert_inline_anchor(node)
+  def inline_anchor(node)
     if node.type == :xref
       # This is the same as super...
       if (path = node.attributes['path'])
@@ -357,17 +344,9 @@ class MultipageHtml5Converter < Asciidoctor::Converter::Html5Converter
       else
         attrs = node.role ? %( class="#{node.role}") : ''
         unless (text = node.text)
-          if AbstractNode === (ref = (@refs ||= node.document.catalog[:refs])[refid = node.attributes['refid']] || (refid.nil_or_empty? ? (top = get_root_document node) : nil))
-            if (@resolving_xref ||= (outer = true)) && outer
-              if (text = ref.xreftext node.attr 'xrefstyle', nil, true)
-                text = text.gsub DropAnchorRx, '' if text.include? '<a'
-              else
-                text = top ? '[^top]' : %([#{refid}])
-              end
-              @resolving_xref = nil
-            else
-              text = top ? '[^top]' : %([#{refid}])
-            end
+          refid = node.attributes['refid']
+          if AbstractNode === (ref = (@refs ||= node.document.catalog[:refs])[refid])
+            text = (ref.xreftext node.attr('xrefstyle')) || %([#{refid}])
           else
             text = %([#{refid}])
           end
@@ -398,17 +377,18 @@ class MultipageHtml5Converter < Asciidoctor::Converter::Html5Converter
   end
 
   # From node, create a skeleton document that will be used to generate the
-  # TOC. This is first used to create a full skeleton (@full_outline) from the
+  # TOC. This is first used to create a full skeleton (@@full_outline) from the
   # original document (for_page=nil). Then it is used for each individual page
   # to create a second skeleton from the first. In this way, TOC entries are
   # included that are not part of the current page, or excluded if not
   # applicable for the current page.
   def new_outline_doc(node, new_parent:nil, for_page:nil)
     if node.class == Document
-      new_document = Document.new([], {:doctype => node.doctype})
+      new_document = Document.new([])
       new_document.mplevel = node.mplevel
       new_document.id = node.id
-      new_document.update_attributes(node.attributes)
+      new_document.set_attr('sectnumlevels', node.attr(:sectnumlevels))
+      new_document.set_attr('toclevels', node.attr(:toclevels))
       new_parent = new_document
       node.sections.each do |section|
         new_outline_doc(section, new_parent: new_parent,
@@ -422,12 +402,11 @@ class MultipageHtml5Converter < Asciidoctor::Converter::Html5Converter
                                 level = node.level,
                                 numbered = node.numbered)
       new_section.id = node.id
-      new_section.sectname = node.sectname
       new_section.caption = node.caption
-      new_section.title = node.instance_variable_get(:@title)
+      new_section.title = node.title
       new_section.mplevel = node.mplevel
       new_parent << new_section
-      new_parent.sections.last.numeral = node.numeral
+      new_parent.sections.last.number = node.number
       new_parent = new_section
       node.sections.each do |section|
         new_outline_doc(section, new_parent: new_parent,
@@ -437,14 +416,13 @@ class MultipageHtml5Converter < Asciidoctor::Converter::Html5Converter
     return new_document
   end
 
-  # Override Html5Converter convert_outline() to return a custom TOC
-  # outline.
-  def convert_outline(node, opts = {})
+  # Override Html5Converter outline() to return a custom TOC outline
+  def outline(node, opts = {})
     doc = node.document
-    # Find this node in the @full_outline skeleton document
-    page_node = doc.mp_root.full_outline.find_by(id: node.id).first
+    # Find this node in the @@full_outline skeleton document
+    page_node = @@full_outline.find_by(id: node.id).first
     # Create a skeleton document for this particular page
-    custom_outline_doc = new_outline_doc(doc.mp_root.full_outline, for_page: page_node)
+    custom_outline_doc = new_outline_doc(@@full_outline, for_page: page_node)
     opts[:page_id] = node.id
     # Generate an extra TOC entry for the root page. Add additional styling if
     # the current page is the root page.
@@ -483,7 +461,7 @@ class MultipageHtml5Converter < Asciidoctor::Converter::Html5Converter
 
   # Process a Section. Each Section will either be split off into its own page
   # or processed as normal by Html5Converter.
-  def convert_section(node)
+  def section(node)
     doc = node.document
     if doc.processed
       # This node can now be handled by Html5Converter.
@@ -504,20 +482,19 @@ class MultipageHtml5Converter < Asciidoctor::Converter::Html5Converter
         page.sectnum = node.parent.sectnum
       end
 
-      page.mp_root = doc.mp_root
-
       # Process node according to mplevel
       if node.mplevel == :branch
         # Retain any part intro blocks, delete others, and add a list
         # of sections for the part landing page.
         chapters_list = Asciidoctor::List.new(node, :ulist)
+        chapters_list.style = "chapters"
         node.blocks.delete_if do |block|
           if block.context == :section
             chapter = block
             chapter.convert
             text = %(<<#{chapter.id},#{chapter.captioned_title}>>)
             # NOTE, there is a non-breaking space (Unicode U+00A0) below.
-            if desc = block.attr('desc') then text << %( – #{desc}) end
+            if desc = block.attr('desc') then text << %( – #{desc}) end
             chapters_list << Asciidoctor::ListItem.new(chapters_list, text)
             true
           end
@@ -552,8 +529,7 @@ class MultipageHtml5Converter < Asciidoctor::Converter::Html5Converter
     doc = node.document
     node.mplevel = :root if node.class == Asciidoctor::Document
     node.sections.each do |section|
-      # Check custom multipage-level attribute on section; warn and
-      # discard if invalid
+      # Check custom multipage-level attribute on section
       if section.attr?('multipage-level', nil, false) &&
          section.attr('multipage-level').to_i <
          node.attr('multipage-level').to_i
@@ -561,15 +537,15 @@ class MultipageHtml5Converter < Asciidoctor::Converter::Html5Converter
                     %(section cannot be less than the parent section value)
         section.set_attr('multipage-level', nil)
       end
-      # Propagate custom multipage-level value to child node
+      # Propogate custom multipage-level value to child node
       if !section.attr?('multipage-level', nil, false) &&
          node.attr('multipage-level') != doc.attr('multipage-level')
         section.set_attr('multipage-level', node.attr('multipage-level'))
       end
       # Set section type
-      if section.level < section.attr('multipage-level', nil, true).to_i
+      if section.level < section.attr('multipage-level').to_i
         section.mplevel = :branch
-      elsif section.level == section.attr('multipage-level', nil, true).to_i
+      elsif section.level == section.attr('multipage-level').to_i
         section.mplevel = :leaf
       else
         section.mplevel = :content
@@ -588,6 +564,7 @@ class MultipageHtml5Converter < Asciidoctor::Converter::Html5Converter
     # Write remaining part/chapter pages
     outdir = ::File.dirname(target)
     ext = ::File.extname(target)
+    target_name = ::File.basename(target, ext)
     @pages.each do |doc|
       chapter_target = doc.id + ext
       outfile = ::File.join(outdir, chapter_target)
@@ -603,10 +580,6 @@ class MultipageHtml5CSS < Asciidoctor::Extensions::DocinfoProcessor
   at_location :head
 
   def process doc
-    # Disable this entirely if the multipage-disable-css attribute is set
-    if doc.attr('multipage-disable-css')
-      return
-    end
     css = []
     # Style Table Of Contents entry for current page
     css << %(.toc-current{font-weight: bold;})

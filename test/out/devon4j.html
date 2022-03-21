@@ -5,7 +5,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.17">
-<title>Java</title>
+<meta name="author" content="Author Name">
+<title>MultipageHtml5Converter Sample</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -440,46 +441,69 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
              .nav-footer{text-align: center; margin-top: auto;}
              .nav-footer > p > a {white-space: nowrap;}</style>
 </head>
-<body id="devon4j" class="article">
+<body id="devon4j" class="book toc2 toc-left">
 <div id="header">
-<h1>Java</h1>
+<h1>MultipageHtml5Converter Sample</h1>
+<div class="details">
+<span id="author" class="author">Author Name</span><br>
 </div>
-<div id="content">
-<div id="preamble">
-<div class="sectionbody">
-<div class="paragraph">
-<p><a href="http://www.devonfw.com/"><em>devonfw</em></a> provides a solution to building applications which combine best-in-class frameworks and libraries as well as industry proven practices and code conventions.
-It massively speeds up development, reduces risks and helps you to deliver better results.</p>
-</div>
-<div class="paragraph">
-<p>The following sections contain the complete compendium of <a href="https://github.com/devonfw/devon4j/">devon4j</a>, the Java stack of devonfw.
-With devon4j we support both <a href="spring.asciidoc">spring</a> and <a href="quarkus.asciidoc">quarkus</a> as major frameworks.
-However, the general coding patterns are based on common Java standards mainly from <a href="https://jakarta.ee">Jakarta EE</a> and therefore do not differ between those frameworks.
-Therefore, the <a href="#general">general</a> section contains all the documentation that is universal to Java and does not differ between the two frameworks.
-Only the sections <a href="spring.asciidoc">spring</a> and <a href="quarkus.asciidoc">quarkus</a> contain documentation that is specific to the respective approach.</p>
-</div>
-<div class="paragraph">
-<p>If you&#8217;re trying to decide which of the two frameworks to use, have a look at <a href="decision-between-Spring-and-Quarkus.asciidoc">this guide</a>.</p>
-</div>
-<div class="paragraph">
-<p>You can also read the latest version of this documentation online at the following sources:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://github.com/devonfw/devon4j/wiki">devon4j on github wiki</a></p>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<p><span class="toc-root"><a href="sample.html">MultipageHtml5Converter Sample</a></span></p><ul class="sectlevel0">
+<li><a href="about-sample.html">About This Sample</a>
 </li>
-<li>
-<p><a href="https://devonfw.com/website/pages/docs/devon4j.asciidoc.html">devon4j on devonfw.com</a>.</p>
+<li><a href="devon4j.html"><span class="toc-current">devon4j</span></a>
+<ul class="sectlevel1">
+<li><a href="General.html">3. General</a>
 </li>
-<li>
-<p><a href="https://repository.sonatype.org/service/local/artifact/maven/redirect?r=central-proxy&amp;g=com.devonfw.java.doc&amp;a=devon4j-doc&amp;v=LATEST&amp;p=pdf">devon4j as PDF on maven-central</a></p>
+<li><a href="_spring.html">4. Spring</a>
+</li>
+<li><a href="Quarkus.html">5. Tutorials</a>
+</li>
+<li><a href="_creating_a_new_application.html">6. Creating a new application</a>
+</li>
+<li><a href="_quarkus_2.html">7. Quarkus</a>
+</li>
+<li><a href="_quarkus_quickstart.html">8. Quarkus Quickstart</a>
+</li>
+<li><a href="_migrate_from_spring_to_quarkus.html">9. Migrate from Spring to Quarkus</a>
+</li>
+<li><a href="_spring_native_vs_quarkus.html">10. Spring Native vs Quarkus</a>
+</li>
+<li><a href="_modern_project_structure.html">11. Modern project structure</a>
+</li>
+<li><a href="_domain_layer.html">12. Domain Layer</a>
+</li>
+<li><a href="_guides_2.html">13. Guides</a>
+</li>
+<li><a href="Spring.html">14. Spring</a>
+</li>
+<li><a href="_client_layer_2.html">15. Client Layer</a>
+</li>
+<li><a href="_service_layer_3.html">16. Service Layer</a>
+</li>
+<li><a href="_service_versioning_2.html">17. Service-Versioning</a>
+</li>
+<li><a href="_logic_layer_3.html">18. Logic Layer</a>
+</li>
+</ul>
 </li>
 </ul>
 </div>
+</div>
+<div id="content">
+<h1 id="devon4j" class="sect0">devon4j</h1>
+<div class="openblock partintro">
+<div class="content">
 <div class="paragraph">
-<p><a id="root-inline"></a>This paragraph has a titled inline anchor
-with id <code>[[root-inline]]</code>. It is linked from <a href="#xrefs1">[xrefs1]</a>.</p>
+<p>This second part has <code>multipage-level=1</code> set, which causes level-1 nodes to be
+leaf nodes (split into chapters). Nodes above that level are branch (or root)
+nodes, while nodes below that level are content nodes.</p>
+</div>
+<div class="paragraph">
+<p>The first part, <a href="about-sample.html">About This Sample</a>, has no <code>multipage-level</code> attribute set, so
+it uses the document-level attribute, which is <code>multipage-level=0</code> (split into
+parts).</p>
 </div>
 </div>
 </div>
@@ -489,19 +513,68 @@ with id <code>[[root-inline]]</code>. It is linked from <a href="#xrefs1">[xrefs
 <p><a href="General.html">General</a></p>
 </li>
 <li>
-<p><a href="spring.html">Spring</a></p>
+<p><a href="_spring.html">Spring</a></p>
 </li>
 <li>
-<p><a href="quarkus-2.html">Quarkus</a></p>
+<p><a href="Quarkus.html">Tutorials</a></p>
+</li>
+<li>
+<p><a href="_creating_a_new_application.html">Creating a new application</a></p>
+</li>
+<li>
+<p><a href="_quarkus_2.html">Quarkus</a></p>
+</li>
+<li>
+<p><a href="_quarkus_quickstart.html">Quarkus Quickstart</a></p>
+</li>
+<li>
+<p><a href="_migrate_from_spring_to_quarkus.html">Migrate from Spring to Quarkus</a></p>
+</li>
+<li>
+<p><a href="_spring_native_vs_quarkus.html">Spring Native vs Quarkus</a></p>
+</li>
+<li>
+<p><a href="_modern_project_structure.html">Modern project structure</a></p>
+</li>
+<li>
+<p><a href="_domain_layer.html">Domain Layer</a></p>
+</li>
+<li>
+<p><a href="_guides_2.html">Guides</a></p>
+</li>
+<li>
+<p><a href="Spring.html">Spring</a></p>
+</li>
+<li>
+<p><a href="_client_layer_2.html">Client Layer</a></p>
+</li>
+<li>
+<p><a href="_service_layer_3.html">Service Layer</a></p>
+</li>
+<li>
+<p><a href="_service_versioning_2.html">Service-Versioning</a></p>
+</li>
+<li>
+<p><a href="_logic_layer_3.html">Logic Layer</a></p>
 </li>
 </ul>
 </div>
 <div class="paragraph nav-footer">
-<p>Next: <a href="General.html">General</a> →</p>
+<p>← Previous: <a href="about-sample.html">About This Sample</a> | ↑ Up: <a href="sample.html">MultipageHtml5Converter Sample</a> | Next: <a href="General.html">General</a> →</p>
+</div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. "Stammdaten" in German.
+</div>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. Whether to use checked exceptions or not is a controversial topic. Arguments for both sides can be found under <a href="https://www.artima.com/intv/handcuffs.html">The Trouble with Checked Exceptions</a>, <a href="https://docs.oracle.com/javase/tutorial/essential/exceptions/runtime.html">Unchecked Exceptions — The Controversy</a>, and <a href="https://phauer.com/2015/checked-exceptions-are-evil/">Checked Exceptions are Evil</a>. The arguments in favor of unchecked exceptions tend to prevail for applications built with devon4j. Therefore, unchecked exceptions should be used for a consistent style.
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
+Last updated 2022-03-21 12:11:13 +0100
 </div>
 </div>
 </body>
