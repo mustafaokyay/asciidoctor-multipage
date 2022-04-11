@@ -88,7 +88,7 @@ Here you will find documentation and code-patterns for developing with Java in g
 
 <<<<
 
-include::guide-configuration.asciidoc[leveloffset=+2]
+include::guide-configuration.asciidoc[leveloffset=2]
 
 <<<<
 
